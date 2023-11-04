@@ -1,0 +1,1 @@
+The former is typically used when creating web applications, and contains the APIs suited to them. The latter is more general purpose and can be used for various types of projects. You can change it in the `.csproj` file if necessary.
