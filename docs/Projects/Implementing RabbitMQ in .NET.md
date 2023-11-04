@@ -1,3 +1,7 @@
+---
+share: "true"
+---
+
 #rabbitMQ 
 I could easily use a library like MassTransit to implement RabbitMQ, but to truly get a grasp of the technology, I will be implementing it using abstractions.
 

@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 Integration tests *test* the interaction between application components. They: 
 - Use the actual components that the app uses in production.
 - Require more code and data processing.

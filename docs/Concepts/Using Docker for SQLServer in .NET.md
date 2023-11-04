@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 First things first, you need an SQLServer image to create a container from. You can use this commad to pull an image from the Docker Registry:
 ```
 docker pull mcr.microsoft.com/mssql/server:2022-latest

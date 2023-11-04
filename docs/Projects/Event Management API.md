@@ -1,3 +1,7 @@
+---
+share: "true"
+---
+
 Alright. The aim is to build a monolithic API with separated application layers so that it can easily be deployed using Microservices architecture, for the sake of it.
 
 Refer to these:

@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 ## Repository Pattern
 
 The Repository Pattern is a structural design pattern used to abstract and centralize data access in an application. It separates the data access logic from the rest of the application, providing a more organized and maintainable way to work with data. In this context, we are implementing a generic repository pattern.

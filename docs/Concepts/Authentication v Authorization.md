@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 ### Authentication v Authorization
 - Authentication involves verifying the identity of a user, aka, "Who are you?" It involves verifying the credentials provided by a user or entity to confirm their identity.
 - Authorisation is concerned with determining the actions a verified user or entity can perform on a system, aka "What are you allowed to do?" It defines what resources they can access or the permissions and privileges granted to them.

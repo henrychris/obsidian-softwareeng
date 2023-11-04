@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 - ***Note***: These secrets are only registered in a development environment. For production scenarios, use other methods.
 - Run this command:
 ```

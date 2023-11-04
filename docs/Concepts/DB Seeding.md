@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 Database seeding is a process in which you populate your database with initial or default data when your application starts. This initial data could include default records, sample data, or any data necessary for the application to function correctly during development or testing.
 
 **SeedDataBase.cs:**

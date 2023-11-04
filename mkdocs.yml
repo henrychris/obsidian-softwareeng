@@ -1,6 +1,6 @@
 site_name: Henry's Software Eng Notes
 site_description: Just learning notes. Nothing special.
-site_url: https://henrychris.github.io/ # Change this to your site URL
+site_url: https://henrychris.github.io/obsidianSwEng # Change this to your site URL
 
 theme:
     name: 'material'

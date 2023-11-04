@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 **Default Exception Handler**:
 1. This is an extension method for the `IApplicationBuilder` and is intended to be used in the startup configuration.
 2. It uses the built-in `UseExceptionHandler` middleware to handle exceptions.

@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 # Courses
 - [Full Stack part0 | Fundamentals of Web apps](https://fullstackopen.com/en/part0/fundamentals_of_web_apps)
 - [Algorithms and Data Structures](https://frontendmasters.com/courses/algorithms)

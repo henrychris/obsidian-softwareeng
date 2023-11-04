@@ -13,7 +13,7 @@ title: Configuration
 
 You need to configure the plugin and the `mkdocs` configuration for it to work properly.
 
-You can find more information about creating the site using the [Material Mkdocs Documentation](https://squidfunk.github.io/mkdocs-material/creating-your-site/#advanced-configuration).
+You can find more information about creating the site using the [Material Mkdocs Documentation](https://squidfunk.github.io/mkdocs-material/creating-your-site/#advanced-configuration)
 
 In the repository that you cloned, you will find a `mkdocs.yml` file. This file allows you to customize your blog. The most important settings to edit are:
 

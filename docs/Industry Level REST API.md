@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 # ErrorOr
 My main takeaway from [this](https://www.youtube.com/watch?v=PmDJIooZjBE) video is the ErrorOr library. In a nutshell, it allows one to return either an error from a function, or the result of the successful operation. It makes error handling a bit easier too, as in some cases you can add all errors that occurred, instead of just the first.
 

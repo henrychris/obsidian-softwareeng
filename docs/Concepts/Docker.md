@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 # Intro
 Docker is a platform for developing, shipping and running apps using containerisation (to place an app in a container). It provides a consistent environment for applications to run, making it easier to develop, deploy, and scale software across different environments. Here are the key concepts:
 

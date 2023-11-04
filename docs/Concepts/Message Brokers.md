@@ -1,5 +1,7 @@
+---
+share: "true"
+---
 #software-architecture
-
 # Intro
 **Message brokers** are a piece of software that act as an intermediary between software systems. One system is a *producer* that creates messages, and the other is a *consumer* that subscribe to channels and receive messages. A *message* is simply a binary blob of data. 
 They help decouple systems, as producers and consumers need not directly interact or *know* about one another. The means of *passing* the messages can change, but the applications need not know that.

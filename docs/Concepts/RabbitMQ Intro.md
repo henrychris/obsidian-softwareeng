@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 #rabbitMQ 
 It is a message broker that implements the AMQP message model (v0.91). Instead of producing messages directly to a **queue**, messages go to an **exchange**. Exchanges receive all messages and distribute them as they are addressed.
 An exchange can connect to many queues, and the queues are connected to the consuming services (many services can connect to one queue). The exchanges use connections called **bindings**, which can be referenced using a **binding key**.
