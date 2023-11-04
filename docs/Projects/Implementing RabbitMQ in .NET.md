@@ -1,8 +1,8 @@
 ---
 share: "true"
+tags:
+  - rabbitMQ
 ---
-
-#rabbitMQ 
 I could easily use a library like MassTransit to implement RabbitMQ, but to truly get a grasp of the technology, I will be implementing it using abstractions.
 
 # Basics
@@ -108,9 +108,8 @@ The binding keys are up to you of course. The main thing is to ensure the queues
 Topic exchanges (more here: [[RabbitMQ Intro]]), 
 **todo**: give short definition of topic exchanges.
 
-## Setting Up RabbitMQ in .NET
+# Setting Up RabbitMQ in .NET
 1. Install RabbitMQ with Docker: `docker run -d --hostname my-rabit --name rabbit-learn -p 15672:15672 -p 5672:5672 rabbitmq:3-management`
-
 
 [Building a Message Bus with .NET Core and RabbitMQ | by Fatih Dumanlı | Medium](https://fatihdumanli.medium.com/build-a-message-bus-implementation-with-net-core-and-rabbitmq-9ba350b777f4)
 [A Beginners Guideline to RabbitMq and MassTransit(Part 2): Implement RabbitMQ in Code with MassTransit | by tong eric | Bina Nusantara IT Division | Medium](https://medium.com/bina-nusantara-it-division/a-beginners-guideline-to-rabbitmq-and-masstransit-part-2-implement-rabbitmq-in-code-with-af0503db2613)
