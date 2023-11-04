@@ -1,5 +1,7 @@
 ---
 share: "true"
+tags:
+  - interview
 ---
 ### Questions To Ask
 1. What major issues will I be solving?
@@ -11,7 +13,7 @@ share: "true"
 7. Do you like your job? how is success celebrated?
 8. What's the dress code here?
 
-### Interview Tips #interview
+### Interview Tips 
 1. Brush up on core programming concepts and algorithms.
 2. Prepare answers for common behavioural questions. E.g.. “Tell me about yourself”. Sell yourself and make them like you.
 3. Have thoughtful questions about the company and role. Do extensive due diligence. Research and push them.
