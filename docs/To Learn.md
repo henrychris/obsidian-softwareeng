@@ -8,6 +8,7 @@ share: "true"
 - [Advanced C#](https://www.freecodecamp.org/news/learn-advanced-c-concepts/)
 - [The Missing Semester of Your CS Education (mit.edu)](https://missing.csail.mit.edu/)
 - [VS Code Course](https://frontendmasters.com/courses/customize-vs-code/)
+- [Cloud Fundamentals: AWS Services for C# Developers](https://app.dometrain.com/courses/enrolled/1993904)
 
 # Articles
 - [How ASP.NET MVC 6 discovers controllers? | Strathweb. A free flowing tech monologue.](https://www.strathweb.com/2015/04/asp-net-mvc-6-discovers-controllers/)
