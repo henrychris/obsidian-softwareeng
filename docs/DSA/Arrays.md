@@ -38,3 +38,25 @@ This removes an element from an array, the time complexity also varies.
 1. **At the End**: Deleting an element from the end of an array is also straightforward and has a time complexity of O(1). You mark the space as empty or decrease the array size, but you don't need to shift any other elements.
 2. **At the Beginning or Middle**: Deleting an element from the beginning or the middle of an array requires shifting all elements after the deletion point to close the gap. This operation has a time complexity of O(n), where 'n' is the number of elements in the array.
 
+# Summary
+- Arrays are a fixed size, contiguous block of memory.
+- They do not grow automatically.
+
+
+# Algorithms
+## Linear Search
+The easiest there is. Simply iterate over an array in search of a value. If the value is found, return true, else, return false.
+```
+function linear_search(haystack: number[], needle: number): boolean {
+
+    for (let index = 0; index < haystack.length; index++) {
+
+        if (haystack[index] == needle) {
+
+            return true;
+
+        }
+    }
+    return false;
+}
+```
