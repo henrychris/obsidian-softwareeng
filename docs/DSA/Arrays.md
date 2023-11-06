@@ -48,15 +48,14 @@ This removes an element from an array, the time complexity also varies.
 The easiest there is. Simply iterate over an array in search of a value. If the value is found, return true, else, return false.
 ```
 function linear_search(haystack: number[], needle: number): boolean {
-
     for (let index = 0; index < haystack.length; index++) {
-
         if (haystack[index] == needle) {
-
             return true;
-
         }
     }
     return false;
 }
 ```
+
+## Binary Search
+An efficient search algorithm used to find a specific element in a **sorted** array or list. It follows a divide-and-conquer approach, repeatedly dividing the search space in half until the desired element is found or determined to be absent.
