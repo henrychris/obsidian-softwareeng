@@ -91,3 +91,5 @@ function bs_list(haystack: number[], needle: number): boolean {
 	2. if value > target, cut out the right side of the array. Set `high` to the index of the midpoint.
 	3. if value < target, cut out the left side of the array. Set `low` to the midpoint, plus one to exclude the value.
 4. Repeat while `low` < `high`.
+
+## Bubble Sort
