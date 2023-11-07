@@ -59,3 +59,4 @@ function linear_search(haystack: number[], needle: number): boolean {
 
 ## Binary Search
 An efficient search algorithm used to find a specific element in a **sorted** array or list. It follows a divide-and-conquer approach, repeatedly dividing the search space in half until the desired element is found or determined to be absent.
+
