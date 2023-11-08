@@ -39,5 +39,5 @@ jobs:
       nav_hide: ${{ inputs.nav_hide}}
       dry_run: ${{ inputs.dry_run}}
     secrets:
-      GH_PAT: ${{ secrets.GH_TOKEN }}
+      GH_PAT: ${{ secrets.GITHUB_TOKEN }}
 
