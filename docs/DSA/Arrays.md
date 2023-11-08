@@ -44,7 +44,7 @@ This removes an element from an array, the time complexity also varies.
 
 
 # Algorithms
-## Linear Search
+## Linear Search - O(N)
 The easiest there is. Simply iterate over an array in search of a value. If the value is found, return true, else, return false.
 ```
 function linear_search(haystack: number[], needle: number): boolean {
@@ -57,7 +57,7 @@ function linear_search(haystack: number[], needle: number): boolean {
 }
 ```
 
-## Binary Search
+## Binary Search - O(log n)
 An efficient search algorithm used to find a specific element in a **sorted** array or list. It follows a divide-and-conquer approach, repeatedly dividing the search space in half until the desired element is found or determined to be absent.
 
 ```
@@ -92,4 +92,26 @@ function bs_list(haystack: number[], needle: number): boolean {
 	3. if value < target, cut out the left side of the array. Set `low` to the midpoint, plus one to exclude the value.
 4. Repeat while `low` < `high`.
 
-## Bubble Sort
+## Bubble Sort - O(n ^ 2)
+This is also rather simple. Bubble sort loops through the array, over each element. If an element is larger than the one next to it, their positions are swapped.
+
+```
+function bubble_sort(arr: number[]): void {  
+    // Outer loop controls the number of passes through the array  
+    for (let i = 0; i < arr.length; i++) {  
+        // Inner loop iterates through the unsorted portion of the array  
+        for (let j = 0; j < arr.length - 1 - i; j++) {  
+            // Compare adjacent elements and swap if they are in the wrong order  
+            // Store the value at arr[j] in a temporary variable            7
+            const temp = arr[j];  
+            if (arr[j] > arr[j + 1]) {  
+                // Swap the elements if they are out of order  
+                arr[j] = arr[j + 1];  
+                arr[j + 1] = temp;  
+            }  
+        }  
+    }  
+}
+```
+
+

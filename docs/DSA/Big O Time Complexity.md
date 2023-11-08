@@ -1,3 +1,7 @@
+---
+share: "true"
+---
+
 # Definition
 Big O is a mathematical notation used to the define the time and memory requirements of an algorithm. It helps software engineers make decisions on which data structures or algorithms to use when solving a problem. 
 
