@@ -21,4 +21,4 @@ jobs:
   deploy:
     uses: ObsidianPublisher/actions/.github/workflows/deploy.yml@main
     secrets:
-      GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_TOKEN }}
