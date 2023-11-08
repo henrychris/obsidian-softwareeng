@@ -62,25 +62,22 @@ An efficient search algorithm used to find a specific element in a **sorted** ar
 
 ```
 function bs_list(haystack: number[], needle: number): boolean {
-
     let lowIndex = 0;
     let highIndex = haystack.length;
 
-    do {
+	do {
         const midIndex = Math.floor((lowIndex + highIndex) / 2);
         if (haystack[midIndex] === needle) {
-            return true;
-        }
-
+            return true;
+        }
         if (haystack[midIndex] > needle) {
             highIndex = midIndex;
         }
         else {
-            lowIndex = midIndex + 1;
+            lowIndex = midIndex + 1;
         }
     } while (lowIndex < highIndex);
-
-    return false;
+    return false;
 }
 ```
 
