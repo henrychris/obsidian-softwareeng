@@ -11,4 +11,4 @@ jobs:
       CLEAN: true
       DRY_RUN: false
     secrets:
-      GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_TOKEN }}
