@@ -41,5 +41,33 @@ Using pseudocode can be beneficial when collaborating with others, discussing al
 # Example = Binary Search
 
 ## Plain English
-Given an **sorted** array of numbers...
-1. Set a 
+Given an **sorted** array of numbers, with no duplicates, and a value to find, called `target`...
+1. Set a variable `lo` as the start of the array, and `high` as the end of the array.
+2. Using `lo` and `high`, find the midpoint of the array. 
+3. If the value at the midpoint is equal to the target, return the index.
+4. If the value at the midpoint is greater than the target, cut out the right side of the array. The value must be to the left.
+5. If the value at the midpoint is less than the target, cut out the left side of the array. The value must be to the right.
+6. Repeat until the value is found.
+
+## Pseudocode
+```
+# Binary Search Algorithm
+arr is the array. 
+target is the variable to search for.
+
+set lo = 0
+set high = arr.length
+set mid = (lo + high) / 2
+
+while lo < high (when they are the same, there is only one value left)
+	if midValue = target
+		return mid
+	else if midValue > target
+		hi = mid # Cut out the right side of the array
+	else 
+		lo = mid + 1 # Cut out the left side of the array
+
+if target is not found, return -1
+```
+
+Implementation here: [[Binary Search]].

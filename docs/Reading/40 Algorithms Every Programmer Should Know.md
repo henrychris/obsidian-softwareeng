@@ -25,3 +25,18 @@ Next is deployment. The production environment must suit the algorithm being run
 
 ## Specifying the Logic 
 It's important to specify the logic and architecture of the algorithm before implementing. The easiest way is to use [[Pseudocode]]. But before this, you need to completely understand the problem and write the steps in plain English, **then**, you convert it to pseudocode. 
+
+However, in some cases, you can represent the logic in a programming language - if it is that simple.
+
+# Algorithm Design Techniques
+When designing an algorithm, keep the following concerns in mind as you iterate:
+- **Concern 1**: Is this algorithm producing the result we expected?
+- **Concern 2**: Is this the most optimal way to get these results?
+- **Concern 3**: How is the algorithm going to perform on larger datasets?
+
+When designing a solution, you would find it beneficial to understand the complexity of the problem (and maybe even **categorise** it).
+
+## Algorithm Categories
+- **Data-intensive algorithms**: Data-intensive algorithms are designed to deal with a large amount of data. 
+- **Compute-intensive algorithms**: Compute-intensive algorithms have considerable processing requirements but do not involve large amounts of data.
+- **Both data and compute-intensive algorithms**: There are certain algorithms that deal with a large amount of data and also have considerable computing requirements.
