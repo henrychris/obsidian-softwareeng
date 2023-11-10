@@ -37,6 +37,6 @@ When designing an algorithm, keep the following concerns in mind as you iterate:
 When designing a solution, you would find it beneficial to understand the complexity of the problem (and maybe even **categorise** it).
 
 ## Algorithm Categories
-- **Data-intensive algorithms**: Data-intensive algorithms are designed to deal with a large amount of data. 
-- **Compute-intensive algorithms**: Compute-intensive algorithms have considerable processing requirements but do not involve large amounts of data.
-- **Both data and compute-intensive algorithms**: There are certain algorithms that deal with a large amount of data and also have considerable computing requirements.
+- **Data-intensive algorithms**: they are characterized by their heavy reliance on data processing and manipulation. These algorithms typically involve large datasets that need to be analysed, transformed, or queried. **Example:** Algorithms for data analytics, database queries, and data mining.
+- **Compute-intensive algorithms**: - they are those that demand significant computational power or processing capabilities. These algorithms involve complex mathematical calculations, simulations, or other operations that require substantial CPU resources. **Example:** Scientific simulations, weather modelling, and certain types of encryption algorithms can be compute-intensive.
+- **Both data and compute-intensive algorithms**: Algorithms that are both data and compute-intensive require substantial processing power for both data manipulation and complex computations. These algorithms often involve a combination of large-scale data processing and intensive mathematical or computational operations. **Example:** Machine learning algorithms, such as deep learning neural networks, often fall into this category. Training a neural network involves processing large datasets (data-intensive) and performing numerous mathematical computations during the training process (compute-intensive).
