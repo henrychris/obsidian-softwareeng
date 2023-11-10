@@ -122,3 +122,4 @@ Add EventCapacity and TicketsSold. Add to TicketsSold as user's buy tickets. Use
 - Look at ticket generation and email sending (update ticket purchase endpoint)
 - Tickets can be a separate module tbh. Enter from the event and send a request? Overly complex for no reason though.
 - Update README to mention database tools. Or, dockerise the application.
+- State management for event status. The date should match the status.
