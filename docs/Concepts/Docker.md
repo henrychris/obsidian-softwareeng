@@ -15,4 +15,4 @@ Docker is a platform for developing, shipping and running apps using containeris
 9. **Efficiency**: Containers use fewer system resources compared to traditional virtual machines, making them efficient for running multiple applications on a single host.
 
 
-Related: [[Using Docker for SQLServer in .NET]]
+Related: [[Using Docker for SQLServer in .NET]], [How to containerize your ASP.NET Core application and SQL Server with Docker](https://www.twilio.com/blog/containerize-your-aspdotnet-core-application-and-sql-server-with-docker)
