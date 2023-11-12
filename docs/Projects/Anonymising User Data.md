@@ -1,0 +1,8 @@
+- Write a proper algorithm to anonymise data.
+- Create monitoring tools.
+- Create a frontend to allow customisation of options.
+- Send anonymised data as a PDF.
+- Reach out to hospitals in naija. Do they need such a system?
+- Make it customisable. Change the data processed per time, what data source is used.
+	- Maybe accept excel sheets if it isn't a live data source.
+- Hospitals have systems they use. There is usually a dominant player in such a market, tailor to them.
