@@ -1,0 +1,1 @@
+https://medium.com/craft-academy/javascript-arrow-functions-27d4c3334b83[[JS Arrow Functions]]
