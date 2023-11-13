@@ -6,3 +6,6 @@
 - Make it customisable. Change the data processed per time, what data source is used.
 	- Maybe accept excel sheets if it isn't a live data source.
 - Hospitals have systems they use. There is usually a dominant player in such a market, tailor to them.
+- [What is Data Anonymization | Pros, Cons & Common Techniques | Imperva](https://www.imperva.com/learn/data-security/anonymization/)
+
+- Create a Desktop App. 

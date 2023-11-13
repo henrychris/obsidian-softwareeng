@@ -18,6 +18,9 @@ share: "true"
 - [What I learnt from building 3 high traffic web applications on an embedded key value store. | by Anthony Alaribe | HackerNoon.com | Medium](https://medium.com/hackernoon/what-i-learnt-from-building-3-high-traffic-web-applications-on-an-embedded-key-value-store-68d47249774f)
 - [What do you do about the High Shege/minute you get from API integrations? | by Anthony Alaribe](https://tonyalaribe.medium.com/what-do-you-do-about-the-high-shege-minute-you-get-from-api-integrations-90770d14066f)
 - [API Versioning](https://dateo-software.de/blog/web-api-versioning?utm_source=csharpdigest&utm_medium&utm_campaign=1722) 
+- [The Joel Test: 12 Steps to Better Code](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
+- [Daily Builds Are Your Friend](https://www.joelonsoftware.com/articles/fog0000000023.html)
+- [Guerrilla Guide To Interviewing](https://www.joelonsoftware.com/articles/fog0000000073.html)
 
 # From Twitter
 - [More on Modular Monoliths](https://x.com/mjovanovictech/status/1715986490893725965?s=20)
@@ -35,6 +38,8 @@ share: "true"
 - [DB Normalization](https://youtu.be/GFQaEYEc8_8)
 - DevOps Stuff: [John Savill's Technical Training - YouTube](https://www.youtube.com/@NTFAQGuy/videos)
 - [How To Become Articulate](https://youtu.be/mD_tXCcsL0k)
+- [Building a Saas Product](https://www.youtube.com/watch?v=r895rFUbGtE)
+- 
 
 # Concepts (no links)
 - Ports and adapters / Hexagonal architecture
