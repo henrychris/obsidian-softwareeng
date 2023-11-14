@@ -27,6 +27,16 @@ Related:
 # Modules
 # Auth
 
+## Signup
+1. User creates account with email and password. Other platform integrations can be used here, like Google.
+2. The user is required to provide a NIGERIAN phone number.
+3. An OTP is sent to the user's phone to verify ownership.
+
+## Login
+1. User can either provide email and password, or phone number and password. A button should be clicked to switch between options. A user may use a platform integration, like Google, to sign in.
+2. If the user provides the wrong password **three** times, show a *CAPTCHA*.
+3. If the user provides the wrong password **five** times, lock them out. Have them use the forgot password screen to verify their identity.
+4. If the user forgets their password, an email is sent to the registered email address.
 # Messaging
 
 # User Ratings and Reviews
@@ -34,7 +44,12 @@ Related:
 # Admin
 
 # Orders
+1. A user can create a maximum of **ten** offers per time.
+2. An offer includes: network, airtime amount, expiry date. The DB also maintains the date it was created.
+3. Orders may have three states: **Available**, **Expired**, **InEscrow**, **Completed**
 
+# Transactions
+1. When a buyer chooses to engage in an offer, it goes into **escrow**. 
 # Message Broker
 
 # Payments

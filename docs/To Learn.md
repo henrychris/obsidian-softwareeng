@@ -21,6 +21,8 @@ share: "true"
 - [The Joel Test: 12 Steps to Better Code](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
 - [Daily Builds Are Your Friend](https://www.joelonsoftware.com/articles/fog0000000023.html)
 - [Guerrilla Guide To Interviewing](https://www.joelonsoftware.com/articles/fog0000000073.html)
+- [The C4 model for visualising software architecture](https://c4model.com/)
+
 
 # From Twitter
 - [More on Modular Monoliths](https://x.com/mjovanovictech/status/1715986490893725965?s=20)
