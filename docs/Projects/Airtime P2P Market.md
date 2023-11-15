@@ -41,7 +41,7 @@ Related:
 1. Buyer and Seller should be able to send messages to one another in a **transaction-scoped** chat room. 
 
 ## User Ratings and Reviews
-
+1. After a trasansaction,  users, 
 ## Admin
 
 ## Orders
