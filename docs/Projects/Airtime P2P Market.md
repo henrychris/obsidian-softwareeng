@@ -47,7 +47,9 @@ Related:
 		The checkboxed reviews should have an associated score used as weights when updating the users review. Good reviews have a higher weight, and vice versa.
 3. After review, the new scores are added to the user's average. 
 		Use a formula that doesn't require knowledge of past review scores.
-		((Previous Review Average \* number of review) + new review score) / 
+		((Previous Review Average \* number of reviews) + new review score) / number of reviews + 1
+		e.g. leaving a 4.8 review on a product with a 4.7 average after 5000 reviews. 
+		New score = ((4.7 \* 5000) + 4.8) / (5000 + 1)
 ## Orders
 1. A user can create a maximum of **ten** offers per time.
 2. An offer includes: network, airtime amount, expiry date. The DB also maintains the date it was created.
@@ -87,7 +89,7 @@ Status: "Available"
 ```
 
 2. A buyer sees this on the `Buy` page and chooses to accept the offer. An offer can only be accepted if the buyer has sufficient balance. The `Order` status becomes **`InEscrow`**. 
-3. An escrow wallet is generated and funds move from the buyer's wallet to the escrow account. The escrow wallet has this structure:
+3. An `Escrow` wallet is generated and funds move from the buyer's wallet to the escrow account. The escrow wallet has this structure:
 ```
 TransactionReference: "",
 BuyerId: "",
@@ -96,9 +98,19 @@ Balance: xxx,
 BuyerConfirmed: false,
 SellerConfirmed: false
 ```
-4. At this point, the seller is required to send airtime to the buyer's number. Once that is complete, they can mark the requirement as completed. The escrow wallet will be updated:
+4. At this point, the seller is required to **send** airtime to the buyer's number. Once that is complete, they can mark the requirement as completed. The escrow wallet will be updated:
 ```
 BuyerConfirmed: true
 ```
 
-The buyer will need to confirm that they have received the amount. 
+The buyer will need to confirm that they have received the amount. Once they do, the escrow wallet will be updated:
+```
+SellerConfirmed: true
+```
+5. At this point, the transaction is considered completed. Users are asked to review one another as the page redirects to a review page. The chat is automatically closed and summaries are sent to both users. The escrow wallet is deleted.
+
+
+# Notes
+- Ensure there are appropriate checks to prevent the seller from marking the requirement as completed without actually sending airtime.
+- Clearly communicate to the buyer that they need to confirm upon receiving the airtime.
+- Clearly state how users are prompted to review each other, and if there are any specific criteria or guidelines for reviews.
