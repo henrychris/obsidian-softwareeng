@@ -39,23 +39,30 @@ Related:
 4. If the user forgets their password, an email is sent to the registered email address.
 ## Messaging
 1. Buyer and Seller should be able to send messages to one another in a **transaction-scoped** chat room. 
+2. When a transaction concludes, the chat should be inaccessible to the user. A copy of the messages should be emailed to each party in a **signed** PDF.
 
 ## User Ratings and Reviews
-1. After a trasansaction,  users, 
-## Admin
-
+1. After a transaction, users can review one another using a star system.
+2. There will also be checkboxes with review options as well as a text box for a longer review. 
+		The checkboxed reviews should have an associated score used as weights when updating the users review. Good reviews have a higher weight, and vice versa.
+3. After review, the new scores are added to the user's average. 
+		Use a formula that doesn't require knowledge of past review scores.
 ## Orders
 1. A user can create a maximum of **ten** offers per time.
 2. An offer includes: network, airtime amount, expiry date. The DB also maintains the date it was created.
 3. Orders may have one of four states: **Available**, **Expired**, **InEscrow**, **Completed**.
+4. Order references should be in this format: `O-NETWORK_SHORT_CODE-Number`
 ## Transactions
 1. When a buyer chooses to engage in an offer, it goes into **escrow**. 
 2. A **random** wallet is generated and funds go from the buyers wallet into the escrow account.
 3. Once **BOTH** buyer and seller approve that airtime has been moved, the funds move from escrow to the seller's wallet.
-4. Transaction in DB: OrderID, Amount, IsCompleted, ChatID(not sure about this).
+4. Transaction in DB: OrderID, Amount, IsCompleted, ChatID (not sure about this).
+5. Transaction references should be in this format: `T-NETWORK_SHORT_CODE-Number`
 ## Wallet
+### Normal Wallet
 1. To purchase airtime on the platform, users must have funds in their wallet. This is for security reasons.
-2. Wallet in DB: Balance, Type (Escrow or User), BuyerApproved, UserApproved. The last two exist for finalising the transactions in escrow.
-## Message Broker
 
-## Payments
+### Escrow Wallet
+1. A random wallet is created on a per-transaction basis. It exists for a single order, and is deleted afterwards.
+2. In DB: TransactionID, BuyerID, SellerID, Amount, BuyerConfirmed, SellerConfirmed.
+## Message Broker
