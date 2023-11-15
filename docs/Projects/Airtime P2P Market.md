@@ -47,6 +47,7 @@ Related:
 		The checkboxed reviews should have an associated score used as weights when updating the users review. Good reviews have a higher weight, and vice versa.
 3. After review, the new scores are added to the user's average. 
 		Use a formula that doesn't require knowledge of past review scores.
+		((Previous Review Average \* number of review) + new review score) / 
 ## Orders
 1. A user can create a maximum of **ten** offers per time.
 2. An offer includes: network, airtime amount, expiry date. The DB also maintains the date it was created.
@@ -66,7 +67,7 @@ Related:
 
 ### Escrow Wallet
 1. A random wallet is created on a per-transaction basis. It exists for a single order, and is deleted afterwards.
-2. In DB: TransactionID, BuyerID, SellerID, Amount, BuyerConfirmed, SellerConfirmed.
+2. In DB: TransactionReference, BuyerID, SellerID, Balance, BuyerConfirmed, SellerConfirmed, TimeCreated.
 3. Find out how to securely generate this wallet.
 
 ### Chat
@@ -81,7 +82,23 @@ SellerId: "",
 Network: "",
 Amount: "",
 ExpiryDate: "",
-CreationDate: ""
+CreationDate: "",
+Status: "Available"
 ```
 
-2. A buyer sees t
+2. A buyer sees this on the `Buy` page and chooses to accept the offer. An offer can only be accepted if the buyer has sufficient balance. The `Order` status becomes **`InEscrow`**. 
+3. An escrow wallet is generated and funds move from the buyer's wallet to the escrow account. The escrow wallet has this structure:
+```
+TransactionReference: "",
+BuyerId: "",
+SellerId: "",
+Balance: xxx,
+BuyerConfirmed: false,
+SellerConfirmed: false
+```
+4. At this point, the seller is required to send airtime to the buyer's number. Once that is complete, they can mark the requirement as completed. The escrow wallet will be updated:
+```
+BuyerConfirmed: true
+```
+
+The buyer will need to confirm that they have received the amount. 
