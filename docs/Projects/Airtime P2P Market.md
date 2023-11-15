@@ -114,3 +114,4 @@ SellerConfirmed: true
 - Ensure there are appropriate checks to prevent the seller from marking the requirement as completed without actually sending airtime.
 - Clearly communicate to the buyer that they need to confirm upon receiving the airtime.
 - Clearly state how users are prompted to review each other, and if there are any specific criteria or guidelines for reviews.
+- Think about automating the airtime transfer and other security measures.
