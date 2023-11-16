@@ -71,3 +71,5 @@ if target is not found, return -1
 ```
 
 Implementation here: [[Binary Search]].
+
+Helpful: [Tutorial Pseudocode PDF](https://www.csse.canterbury.ac.nz/tim.bell/dt/Tutorial_Pseudocode.pdf)
