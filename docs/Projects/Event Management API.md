@@ -17,7 +17,7 @@ Related Concepts:
 - [[Authentication v Authorization]]
 - [[Modular Monolith]]
 - [[Microsoft.NET.Sdk.Web v Microsoft.NET.Sdk]]
-- [[Dotnet Secrets]]
+- [[Dotnet Configuration - Secrets]]
 - [[Records vs Classes]]
 - [[Repository Pattern and Unit of Work]]
 - [[Using Docker for SQLServer in .NET]]

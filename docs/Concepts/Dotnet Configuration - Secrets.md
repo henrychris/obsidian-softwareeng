@@ -13,3 +13,5 @@ dotnet secrets init
     .AddUserSecrets<Program>()  
     .Build();
 ```
+
+Related: [.NET Configuration In Depth](https://youtu.be/aOXaBZFB0-0?list=TLPQMTcxMTIwMjOEFSQY1gqxhw)
