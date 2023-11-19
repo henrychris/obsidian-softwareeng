@@ -115,6 +115,9 @@ app.UseAuthorization();
 Track the capacity of the event. On each sale, reduce the available no of tickets.
 Add EventCapacity and TicketsSold. Add to TicketsSold as user's buy tickets. Use the difference between both to calculate TicketsAvailable on the frontend.
 
+### Adding Google Sign-in
+clientid: 662210794059-jmh1a5dnol6pj62l4g8h64a71i9n24em.apps.googleusercontent.com
+client secret: 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
 ### TODO
 - Work on features and stop faffing about.
 - Add OrganiserId to event table
