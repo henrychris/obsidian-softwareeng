@@ -14,4 +14,14 @@ dotnet secrets init
     .Build();
 ```
 
+- If you need to bind them to a class, use:
+```
+var jwtSettings = new JwtSettings();
+var configuration = new ConfigurationBuilder()  
+    .AddUserSecrets<Program>()  
+    .Build();  
+  
+configuration.GetSection(nameof(JwtSettings)).Bind(jwtSettings);
+```
+
 Related: [.NET Configuration In Depth](https://youtu.be/aOXaBZFB0-0?list=TLPQMTcxMTIwMjOEFSQY1gqxhw)

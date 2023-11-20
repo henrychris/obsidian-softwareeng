@@ -111,6 +111,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 ```
 
+If using Identity, make sure to register identity BEFORE setting up JWT auth.
 ### Ticketing
 Track the capacity of the event. On each sale, reduce the available no of tickets.
 Add EventCapacity and TicketsSold. Add to TicketsSold as user's buy tickets. Use the difference between both to calculate TicketsAvailable on the frontend.
