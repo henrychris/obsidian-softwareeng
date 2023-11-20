@@ -2,7 +2,7 @@
 share: "true"
 ---
 ### Modular Monolith
-There were a lot of twists and turns, but I've finally got a hang of the setup. In the future, you can refer to [this]([Building Modular Monolith with ASP.NET Core, .NET 5 and C# 9 - The first module #Live 5 - YouTube](https://www.youtube.com/watch?v=l8fYpchrv0c&list=PLqqD43D6Mqz1QLbHRgQ-poMpBpJ4lYi42&index=6)) for advice.
+There were a lot of twists and turns, but I've finally got a hang of the setup. In the future, you can refer to [this](https://www.youtube.com/watch?v=l8fYpchrv0c&list=PLqqD43D6Mqz1QLbHRgQ-poMpBpJ4lYi42&index=6)) for advice.
 There are four modules in my solution at the moment:
 1. **API** - The entry point that collates and runs the other solutions.
 2. **EventModule** - Responsible for all event related services.
