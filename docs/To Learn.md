@@ -23,6 +23,10 @@ share: "true"
 - [Guerrilla Guide To Interviewing](https://www.joelonsoftware.com/articles/fog0000000073.html)
 - [The C4 model for visualising software architecture](https://c4model.com/)
 
+## Fintech Engineering
+- [Building a Modern Bank Backend (monzo.com)](https://monzo.com/blog/2016/09/19/building-a-modern-bank-backend)
+- [Some things you should know if you're building an API/Backend for Financial Services](https://foam-farmer-938.notion.site/Some-things-you-should-know-if-you-re-building-an-API-Backend-for-Financial-Services-c6f4cacc554d4ee4be8ba211c450bb7e)
+- [Race Conditions, Yahoo Boys Syndicates & Fintechs | by 32bitsret | Oct, 2023 | Medium](https://medium.com/@retnan/race-conditions-yahoo-boys-syndicates-fintechs-e8a0fac9f015)
 
 # From Twitter
 - [More on Modular Monoliths](https://x.com/mjovanovictech/status/1715986490893725965?s=20)
