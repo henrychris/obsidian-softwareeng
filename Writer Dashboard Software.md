@@ -1,0 +1,1 @@
+![[WhatsApp Image 2023-12-03 at 18.41.25_c73698c2.jpg]]
