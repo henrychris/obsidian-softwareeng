@@ -132,3 +132,7 @@ public async Task GetEvent_ShouldReturnEvent_WhenEventExistsInDb()
     returnedEvent?.Data?.Name.Should().Be(createdEvent.Name);  
 }
 ```
+
+# Note
+We should not test all behaviours with an integration test, that is obvious. As such, a rule of thumb should be:
+- **Only write integration tests for methods that interact with the DB, or filesystem or external services**
