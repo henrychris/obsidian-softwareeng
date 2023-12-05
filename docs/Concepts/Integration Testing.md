@@ -116,7 +116,7 @@ public async Task GetEvent_ShouldReturnEvent_WhenEventExistsInDb()
 {  
     // Arrange  
     await AuthenticateAsync();  
-  
+   
     // Act  
     var createdEvent = await CreateEventAsync(new CreateEventRequest("Test Event",  
         "This is a test event", 10.99m,  
