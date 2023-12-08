@@ -28,4 +28,5 @@ tags:
 5. Set a time to search and apply for roles. Set a time to learn. Set a time to work.
 6. Contribute to OSS.
 7. Build your portfolio.
+8. Focus on IMPACT. Always think about the **why** to your work and focus your energy on work that aligns with your interests AND that of the company. That is the fastest way to grow your career. Discuss project prioritization with your manager and team lead.
 Related: [[To Learn]], [[Books To Read]]
