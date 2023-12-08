@@ -1,0 +1,22 @@
+- Always use HTTPS
+- Do NOT place sensitive data in query parameters
+- Implement Rate Limiting to prevent brute-force attacks
+	- Ban users that have too many server errors
+	- Clear the X-Powered-By header
+
+# Two Main Auth Mechanisms
+- Bearer Token
+- Authentication Cookie
+## Token Security
+- Don't store token in local storage
+- Store in HttpOnly, Secure cookie
+## Cookie Security
+- Use HttpOnly to mitigate XSS
+- Use SameSite to mitigate CRSF, but, it's not available on all browsers
+	- Short Session Timeouts
+	- Always ask for user credentials for **critical** actions
+	- [[Double Submitted Cookies]]
+
+# Combining Both Approaches
+
+From Mobile -> Send Bearer Token
