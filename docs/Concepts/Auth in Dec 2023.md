@@ -1,9 +1,11 @@
 I've realised that I know nothing when it comes to auth. To remedy that, I'm reviewing all that I used to think.
-
+https://xss-game.appspot.com/level3/frame#1' onerror='alert();//
 ## Misconception: JWTs are replacing cookies.
-**JWTs** are an authentication mechanism. They are a means of encoding user data so that all necessary information is stored within the token. It is stateless, so any server in a cluster can process a request without storing session data.
+### JWT
+**JWTs** are a token format. They are a means of encoding user data so that all necessary information is stored within the token. It is stateless, so any server in a cluster can process a request without storing session data.
 It's very suited for API to API communication.
 
+### Cookies
 **Cookies** are small pieces of data stored in the users browser. They can store sessions, user settings or even be used for tracking. JWTs can also be stored in cookies. They are sent back to the server for later requests to maintain a **stateful** session - that is, they help the server know a request came from the same user.
 
 	A cookie is a name value pair.
@@ -33,11 +35,29 @@ However, someone with access to the client's hard disk could access the data.
 
 **They both serve different purposes. One is for auth, the other is for storage.**
 
+## Session-Based vs Token-Based Auth
+### Session-Based
+- Stateful
+- Sessions are stored server-side
+- Harder to scale horizontally
+- Commonly uses a sessionID
+- Usually sent in Cookie request header
+- Can easily revoke sessions
+
+### Token-Based
+- Stateless
+- Not stored server-side
+- Easier to scale horizontally as data is self contained
+- Commonly uses JWT
+- Typically sent in Authorization Header
+- Harder to revoke a session, e.g. JWTs live for as long they are issued for.
+
 ## Reality: Both are used together of late.
-By storing a JWT in a cookie that is **HttpOnly**, **Secure** and **SameSite=strict**, you can get the advantages of both. Also include an *Anti-Forgery header.* Better still, using a Backend For Frontend, the cookie can be transformed to an auth header before it reaches the API.
+By storing a JWT in a cookie that is **HttpOnly**, **Secure** and **SameSite=strict**, you can get the advantages of both. 
+The JWT stored in a cookie is unretrievable on client-side. **DON'T** store JWT in local storage/
+
+Also include an *Anti-Forgery header.* Better still, using a Backend For Frontend, the cookie can be transformed to an auth header before it reaches the API.
 
 Cookies can be easily deleted to log a user out. JWTs live for as long they are issued for.
-
-**DON'T** store your JWT in local storage, store in a cookie.
 
 Read: [[Common Attacks]]
