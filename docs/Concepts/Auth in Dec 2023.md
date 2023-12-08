@@ -25,7 +25,7 @@ However, someone with access to the client's hard disk could access the data.
 
 - **Domain** - specifies which server can receive a cookie. e.g. `Domain=google.com` means  `google.com` and subdomains like `developer.google.com` can receive the cookie.
 - **SameSite** - specifies if the cookie can be sent with cross-site requests. 
-	- `Strict` - only sends cookie with requests from the origin site - your website. Say you have a website that has *SameSite:Strict* cookies, `example.com`. If you visit it directly, the browser will check for cookies belonging to the domain, and append to the request. 
+	- `Strict` - only sends cookies with requests that originate from the domain it was created for - your website. Say you have a website that has *SameSite:Strict* cookies, `example.com`. If you visit it directly, the browser will check for cookies belonging to the domain, and append to the request. 
 	  But, if you are on `external.com` and click a link making a request to `example.com`, even if the cookie exists, it won't be sent.
 	- `Lax` - cookies will be sent when a user goes from an third-party site to the origin. If you are on `external.com` and make a request to `example.com`, any existing cookies will be sent along.
 
@@ -53,8 +53,14 @@ However, someone with access to the client's hard disk could access the data.
 - Harder to revoke a session, e.g. JWTs live for as long they are issued for.
 
 ## Reality: Both are used together of late.
-By storing a JWT in a cookie that is **HttpOnly**, **Secure** and **SameSite=strict**, you can get the advantages of both. 
-The JWT stored in a cookie is unretrievable on client-side. **DON'T** store JWT in local storage/
+By storing a JWT in a cookie that is **HttpOnly**, **Secure**  you can get the advantages of both. 
+The JWT stored in a **HttpOnly** cookie is unretrievable on client-side. Also use **Secure** to ensure it's only transmitted over HTTP. **DON'T** store JWT in local storage.
+
+You could use SameSite cookies, but that comes with caveats. 
+### Caveats of SameSite Cookies
+
+
+Which is where Antiforgery tokens come in.
 
 Also include an *Anti-Forgery header.* Better still, using a Backend For Frontend, the cookie can be transformed to an auth header before it reaches the API.
 
