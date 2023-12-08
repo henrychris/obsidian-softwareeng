@@ -3,16 +3,18 @@ Stops one website from reading or writing data to another. Only when protocol, h
 # XSS - Cross-Site Scripting
 Cross-Site Scripting (XSS) is a security vulnerability that occurs when an attacker injects malicious scripts (usually JavaScript) into a web application, which is then executed within the context of other users' browsers. This vulnerability allows attackers to steal sensitive information, manipulate the displayed content, or perform actions on behalf of users without their consent.
 
-# Types
-## Reflected
+## Types
+### Reflected
 - Malicious scripts are injected into a URL or input field, and the web application reflects this input back to the user without proper sanitization. When the victim clicks on a crafted link, the script executes.
-## Stored
+### Stored
 - Malicious scripts are stored on the server and displayed to users who access a particular page or application section. For example, in a forum post or comment section.
-## DOM-Based
+### DOM-Based
 - On the client-side only, when user-input is poorly handled, it allows JS to be executed in the browser.
-## Mutation
+### Mutation
 - User input is changed somehow by the browser, before being injected into the DOM and executed.
-
+## Countermeasures
+- Input sanitization
+- Output encoding
 # CSRF - Cross-Site Request Forgery
 CSRF is an attack where a malicious actor tricks a user's browser into performing actions on a secured site without their knowledge or consent. Here's how it works:
 1. **Attacker's Setup**:

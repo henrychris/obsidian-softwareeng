@@ -58,12 +58,10 @@ The JWT stored in a **HttpOnly** cookie is unretrievable on client-side. Also us
 
 You could use SameSite cookies, but that comes with caveats. 
 ### Caveats of SameSite Cookies
+- Not all browsers implement the feature
+- Doesn't help with fine-grained control like role-based requests
+- If you have an XSS vulnerability, nothing will save you.
 
+Which is where AntiForgery tokens come in.
 
-Which is where Antiforgery tokens come in.
-
-Also include an *Anti-Forgery header.* Better still, using a Backend For Frontend, the cookie can be transformed to an auth header before it reaches the API.
-
-Cookies can be easily deleted to log a user out. JWTs live for as long they are issued for.
-
-Read: [[Common Attacks]]
+Read: [[Common Attacks]], [JWT vs Cookie: Why Comparing the Two Is Misleading (jerrynsh.com)](https://jerrynsh.com/all-to-know-about-auth-and-cookies/)
