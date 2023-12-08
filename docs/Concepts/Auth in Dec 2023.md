@@ -33,7 +33,6 @@ However, someone with access to the client's hard disk could access the data.
 
 **They both serve different purposes. One is for auth, the other is for storage.**
 
-
 ## Reality: Both are used together of late.
 By storing a JWT in a cookie that is **HttpOnly**, **Secure** and **SameSite=strict**, you can get the advantages of both. Also include an *Anti-Forgery header.* Better still, using a Backend For Frontend, the cookie can be transformed to an auth header before it reaches the API.
 
