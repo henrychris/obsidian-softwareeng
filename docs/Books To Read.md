@@ -9,3 +9,4 @@ share: "true"
 - [[What Every Programmer Should Know About Memory]]
 - DDIA by Martin Kleppman
 - Thinking In Systems
+- [How To Win Friends And Influence People](https://www.amazon.com/How-win-Friends-Influence-People/dp/8189297813)
