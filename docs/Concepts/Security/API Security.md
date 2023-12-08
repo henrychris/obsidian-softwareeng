@@ -3,6 +3,8 @@
 - Implement Rate Limiting to prevent brute-force attacks
 	- Ban users that have too many server errors
 	- Clear the X-Powered-By header
+- Always ask for user credentials for **critical** actions, e.g change email
+- Never use a GET query for a mutation. 
 
 # Two Main Auth Mechanisms
 - Bearer Token
@@ -14,7 +16,6 @@
 - Use HttpOnly to mitigate XSS
 - Use SameSite to mitigate CRSF, but, it's not available on all browsers
 	- Short Session Timeouts
-	- Always ask for user credentials for **critical** actions
 	- [[Double Submitted Cookies]]
 
 # Combining Both Approaches
