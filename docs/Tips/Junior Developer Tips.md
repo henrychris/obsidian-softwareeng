@@ -12,6 +12,7 @@ tags:
 6. How would you describe your culture? how does it differ from other companies?
 7. Do you like your job? how is success celebrated?
 8. What's the dress code here?
+9. What does the on-boarding and training process look like?
 
 ### Interview Tips 
 1. Brush up on core programming concepts and algorithms.
