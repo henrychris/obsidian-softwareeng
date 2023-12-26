@@ -45,3 +45,5 @@ There are three "paces" a software professional can work at.
 ### Stretching
 
 page 44
+
+"And sometimes my dreams occur exactly as I had dreamt them."
