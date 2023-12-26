@@ -9,4 +9,4 @@
 # Be Someone Who Gets Things Done
 1. Get **impactful** stuff done. Ship high-quality code at a decent pace and over-deliver when necessary. Understand the team's priorities so you know what to do.
 2. Make sure people **know** you are getting stuff done!
-3. Keep a work log. **VERY** important.
+3. Keep a work log. **VERY** important. Check [[Brag Document Template]]

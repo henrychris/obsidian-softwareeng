@@ -22,6 +22,8 @@ share: "true"
 - [Daily Builds Are Your Friend](https://www.joelonsoftware.com/articles/fog0000000023.html)
 - [Guerrilla Guide To Interviewing](https://www.joelonsoftware.com/articles/fog0000000073.html)
 - [The C4 model for visualising software architecture](https://c4model.com/)
+- [Debugging Resources](https://jvns.ca/blog/2019/06/23/a-few-debugging-resources/)
+- [How To Debug](https://blog.regehr.org/archives/199)
 
 ## Fintech Engineering
 - [Building a Modern Bank Backend (monzo.com)](https://monzo.com/blog/2016/09/19/building-a-modern-bank-backend)
