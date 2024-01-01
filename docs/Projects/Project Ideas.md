@@ -8,6 +8,7 @@
 8. [[Movie API]]
 9. [[Writer Dashboard Software]]
 10. [[NRC Website API]] 
+11. [[Gym Application]]
 
 
 	Ensure to include documentation and a README.
