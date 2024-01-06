@@ -4,7 +4,7 @@
 # Journal
 ## Week 1
 - Interviewed writers to get common parts of their workflows to determine features
-- Created repository and file structure
+- Created **repository** and file structure
 - Created git hooks to format code and add structure to commit messages
 - add scripts to setup git hooks
 - add README files to ex
