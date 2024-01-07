@@ -9,3 +9,6 @@
 - add scripts to setup git hooks
 - add README files where necessary
 - Create CI workflow for dotnet
+
+## Week 2
+- Plan architecture, DB structure and essential functions
