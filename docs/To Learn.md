@@ -41,14 +41,12 @@ share: "true"
 - [Who To Learn From](https://x.com/AkshayNarisetti/status/1707369158110007340?s=20)
 - [CyberSec Study Plan](https://x.com/DailyDarkWeb/status/1699044777239761222?s=20)
 - [Davy Herbert's Links](https://x.com/DaveyHert/status/1645341882736693249?s=20)
-- 
 # YouTube
 - [improving communication software engineer - YouTube](https://www.youtube.com/results?search_query=improving+communication+software+engineer)
 - [DB Normalization](https://youtu.be/GFQaEYEc8_8)
 - DevOps Stuff: [John Savill's Technical Training - YouTube](https://www.youtube.com/@NTFAQGuy/videos)
 - [How To Become Articulate](https://youtu.be/mD_tXCcsL0k)
 - [Building a Saas Product](https://www.youtube.com/watch?v=r895rFUbGtE)
-- 
 
 # Concepts (no links)
 - Ports and adapters / Hexagonal architecture
