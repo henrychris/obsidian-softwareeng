@@ -25,7 +25,7 @@ tags:
 ### Career Tips
 1. Join a community, share, and give back.
 2. Position yourself and promote yourself. Write about your projects.
-3. Try to get a **call** with the hirers or technical people at your company. Try to get to the interview phase where they can see you as a person and **promote** yourself. A **FIVE** minute call is all it takes sometimes.
+3. Try to get a **call** with the hirers or technical people at the company. Try to get to the interview phase where they can see you as a person and **promote** yourself. A **FIVE** minute call is all it takes sometimes.
 4. Don't take rejections personally. Set an email filter to catch rejections so they don't fuck you up.
 5. Set a time to search and apply for roles. Set a time to learn. Set a time to work.
 6. Contribute to OSS.
