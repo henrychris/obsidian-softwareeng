@@ -1,0 +1,1 @@
+https://blog.elmah.io/how-to-implement-customized-role-permissions-in-asp-net-core/?utm_source=newsletter.csharpdigest.net&utm_medium=newsletter&utm_campaign=journey-through-the-net-world&_bhlid=cdeaa5ba01ba3eb021b97eaffb9070c0d2e13dc8
