@@ -1,0 +1,3 @@
+- The HTML structure defers for repositories you have access to, and for those that you don't.
+	- Need to find out how to detect when a user has access to a repository or not
+		- OR, find out what the respective html items containing comments look like, and inject the button
