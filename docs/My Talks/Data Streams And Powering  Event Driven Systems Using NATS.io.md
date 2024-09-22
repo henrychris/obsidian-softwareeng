@@ -1,14 +1,6 @@
-[GPT](https://chatgpt.com/c/aac46fa3-197a-4e62-aed0-4fa86319d2ba)
-[Claude](https://claude.ai/chat/429ece95-a4c6-407b-903d-cd81e22d81bd)
-
-im thinking
-- talk about event driven systems, what they are and what problem they solve
-- talk about NATS, the broker, and its features
-- interact with the NATS server using the CLI
-- show setup using docker
-	- `docker run --name nats -p 4222:4222 -p 8222:8222 -d nats -js`
-- demonstrate the features in isolation
-- demonstrate the features tied together in building an event driven application
+setup using docker
+- `docker run --name nats -p 4222:4222 -p 8222:8222 -d nats -js`
+- `docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432  -d postgres:16.1`
 # Event Driven Systems
 An event driven system uses events as a way for components to communicate within a system. The event publisher doesn't know who consumes the events, and the consumer need not know the specifics of the publisher, only the message contract.
 It avoids tight coupling between components.
@@ -35,7 +27,7 @@ In an event-driven system, there are three primary actors:
 - Complexity
 - In-order processing
 - exactly-once processing
-- guaranteed delivery - what if your server blows up after saving data to db but before publishing the event. hm?
+- guaranteed delivery - what if your server blows up after saving data to db but before publishing the event?
 ## Designing Events
 See: 
 - [designing events - serverlessland](https://serverlessland.com/event-driven-architecture/designing-events)
@@ -48,7 +40,7 @@ see:
 # NATS
 ## Concepts
 ### Core NATS
-This is the barebones functionality of NATS. A publish-subscribe model for sending messages using topics to address said messages.
+This is the bare-bones functionality of NATS. A publish-subscribe model for sending messages using topics to address said messages.
 #### Publish-Subscribe
 A producer sends messages to a subject, and one or more consumers subscribe to that subject to receive messages. There's no persistence in Core NATS; consumers must be connected at the time the message is published.
 Can be used in systems where message loss is tolerable.
@@ -67,26 +59,13 @@ us.patient.patientId
 
 **Demo**: Play around with demo #1.
 #### Queue Groups
-Multiple consumers can form a queue group under a single subject. When a message is published, it is delivered to **only one** consumer in the group - used for to .
+Multiple consumers can form a queue group under a single subject. When a message is published, it is delivered to **only one** consumer in the group - used for load balancing.
 
 **Demo:** Jump to demo #4
-
 #### Delivery Semantics
-NATS core provides an ***at-most-once*** delivery guarantee. It is fire & forget. Messages are sent without waiting for acknowledgments. If a subscriber is not available or misses the message due to a crash, the message is lost.
+NATS core provides an ***at-most-once*** delivery guarantee. It is fire & forget. Messages are sent without waiting for acknowledgements. If a subscriber is not available or misses the message due to a crash, the message is lost.
 
 **Demo:** To be demonstrated with JetStream.
-
-1. Core NATS (demo 1 & 4)
-	1. Pub-Sub
-	2. Subjects & Wildcards
-	3. Queue Groups
-	4. How does it provide at most once delivery?
-2. Jetstream (demo 2 &3)
-	1. How does persistence work?
-	2. How does it provide at least once delivery?
-	3. Streams, Limits & Retention Policies
-	4. Consumers, Types & How they interact with Streams
-3. Monitoring & Observability
 ### JetStream
 This is the built-in persistence engine which enables messages to be stored and replayed at a later time.
 Published messages are stored in ***streams***. These streams allow for messages to be replayed, redelivered, or consumed at a later time, ensuring that messages aren't lost if consumers go offline.
@@ -114,44 +93,19 @@ These are subscribers to a stream that can be configured to receive messages in 
 - *Durable:* Retain state even if disconnected; can resume message consumption from where they left off.
 - *Ephemeral*: Exist only as long as they're connected; once they disconnect, their state is lost.
 
-#### Delivery Semantics
-By default, JetStream provides ***at-least-once*** delivery. This means messages *can* be sent twice. However, it supports ***exactly-once*** publishing and consumption by combining [message deduplication](https://docs.nats.io/using-nats/developer/develop_jetstream/model_deep_dive#message-deduplication) & double acknowledgements.
-The publisher uses message deduplication to ensure a duplicate message is ignored &
+**Interaction With Streams**
+- *Replay*: Consumers can start consuming from the first message or from a specific sequence number or time.
+- *Pull vs Push*: Consumers can pull messages when ready, or messages can be pushed to them as they become available.
+	- We can't demo push consumers as they are legacy and not included in v2 of NATS.Net
+	- Pull consumers are recommended as the application can control the flow of the messages coming in so it can process and ack them in an appropriate amount of time.
 
-# **Demo**
-1. **Basic Service Demo**
-    - Show a simple **publish-subscribe** flow to illustrate event-driven communication between a producer and a consumer.
-    - **DONE**
-    - todo: Check if we can see what messages are stored by a nats server
-2. **Service Outage**
-    - **Pub/Sub Demo**: Simulate a service failure to demonstrate **message loss** (where messages are missed if the consumer is down).
-    - **JetStream Persistence**: Show how JetStream ensures **message persistence**, even if a consumer temporarily goes offline.
-	    - see: https://www.youtube.com/watch?v=_CN1OO7yN0I
-	    - https://www.youtube.com/watch?v=ChSVWDW-874
-	- **DONE**
-	- check if messages stored in memory are wiped when the nats server is restarted
-3. **Idempotency Demo**
-    - Explain the importance of idempotent consumers
-    - show problems with non-idempotent consumers
-    - NATS may send the same message more than once, so demonstrate how to make consumers **idempotent**.
-    - Core NATS = at most once delivery
-    - Jetstream = at least once
-    - **DONE**
-4. **Load Balancing with Queue Groups**
-    - Show how **queue groups** enable **load balancing**, where messages are evenly distributed across multiple consumers. This allows easy horizontal scaling without losing your mind in k8s.
-	    - look into `nats micro`
-	    - show how messages are distributed
-5. **Clustering Demo**
-    - Simulate shutting down a NATS server in a cluster and demonstrate how the system automatically **reconnects** and **resumes** message processing. NATS handles this automatically (I may need to subscribe to an event as it does this, or use monitoring).
-    - Discuss NATS' **message limits** and how it handles throughput under different loads.
-6. **Inter-Language Operability**
-    - Showcase **multi-language interoperability** using NATS clients in different languages like **JavaScript**, **Go**, and **C#**.
-    - write a demo for two different languages and show inter opearability
-7. **Other NATS Features**
-    - Highlight additional NATS capabilities like its **key-value store**, which can serve as an alternative to Redis for certain use cases.
-    - Don't go in-depth for this. It's not core to the talk.
-8. **Simple event-based system** 
-	- 
+**Demo:** use demo 3. 
+- Start by showing off an ephemeral consumer with deliver policy set to all messages. 
+- Show a durable consumer with deliver policy set to all messages. the durable consumer remembers which messages it has previously acknowledged.
+
+#### Delivery Semantics
+By default, JetStream provides ***at-least-once*** delivery. This means messages *can* be sent twice. However, it supports ***exactly-once*** publishing and consumption by combining message deduplication & double acknowledgements.
+The publisher uses message deduplication to ensure a duplicate message is ignored &
 
 # Sources
 - [goperCon 2021](https://www.youtube.com/watch?v=NvmGgaWxx_U)
@@ -159,6 +113,5 @@ The publisher uses message deduplication to ensure a duplicate message is ignore
 - [event driven microservices - Synadia](https://www.slideshare.net/slideshow/eventdriven-microservices-with-nats-streaming-95207688/95207688#10)
 - [serverless land](https://serverlessland.com/event-driven-architecture/intro)
 - [We need to talk about NATS](https://www.youtube.com/watch?v=AiUazlrtgyU) - it is actually fucking powerful bro
-
-# Repo Structure
-Each heading under demo should be a folder. 
+- [mesage deduplication](https://docs.nats.io/using-nats/developer/develop_jetstream/model_deep_dive#message-deduplication)
+ 
