@@ -76,6 +76,28 @@ app.use("/media", express.static("public"));
 // files can be fetched from /media/js/whatever
 ```
 
+## Custom Middleware
+In Express, you can create your own middleware. Middleware have this signature:
+```js
+function midware(req, res, next){}
+```
+
+They must be exported like so:
+```js
+module.exports = midware;
+```
+
+You can set up middleware for all routes by calling it in `app.use()`. You can configure it for a group of routes or a single route.
+```js
+// apply to group of routes
+const router = express.Router();
+router.use(midware);
+
+// apply to specific route
+router.get("/test", midware, function (_req, res) {
+res.send("Test!");
+});
+```
 # Express Generator
 ```bash
 npm install express-generator -g
@@ -86,3 +108,26 @@ express [directory-name] --view=pug # use the pug templating engine
 ```
 
 See more [here](https://expressjs.com/en/starter/generator.html).
+
+# Rate Limiting
+I use this package: [express-rate-limit](https://express-rate-limit.mintlify.app/overview). I place my default setup in a module, which can be called into files as needed.
+```js
+const rateLimit = require("express-rate-limit");
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 5,
+    standardHeaders: true, // add the `RateLimit-*` headers to the response
+    legacyHeaders: false,
+    message: {
+        message: "Too many requests, please try again later.",
+        errors: {},
+    },
+});
+
+module.exports = limiter;
+```
+
+I intend to implement the various algorithms myself someday. See these links:
+[logRocket - rate limiting](https://blog.logrocket.com/rate-limiting-node-js/#strategies-managing-global-rate-limit-exceeded-errors)
+[rate limit testing boilerplate](https://github.com/gutsyphilip/node-rate-limiter/tree/boilerplate)
