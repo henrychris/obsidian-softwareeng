@@ -15,7 +15,7 @@ An **electronic coin** is a chain of digital signatures. Ownership of the coin i
 - **Consensus**: The payee needs proof that the majority of nodes in the network agree that the transaction they received was the first occurrence of the coin being spent, ensuring no double-spending occurred. This forms the foundation of how a decentralised consensus (such as Proof of Work) operates.
 
 # 3. Timestamp Server
-![[links-in-blockchain.png]]
+![[docs/assets/img/links-in-blockchain 1.png]]
 The proposed solution begins with a **timestamp server**, which creates a verifiable record of when data existed. The timestamp server works by taking a hash of a block of items that need to be timestamped and widely publishing the hash (e.g., in a newspaper or Usenet post). The purpose of the timestamp is to prove that the data must have existed at a specific point in time, since it was included in the hash.
 
 Each **timestamp** includes the hash of the previous timestamp, forming a continuous chain. This creates a sequence where each new timestamp reinforces the previous ones, providing a secure and immutable record of the order in which events occurred.
