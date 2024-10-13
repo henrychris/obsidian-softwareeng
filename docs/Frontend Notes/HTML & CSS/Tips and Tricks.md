@@ -1,0 +1,1 @@
+Use `auto` left and right margins to centre content.
