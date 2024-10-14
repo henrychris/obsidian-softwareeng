@@ -1,0 +1,1 @@
+- Bitcoin processes 4-7 transactions per second.

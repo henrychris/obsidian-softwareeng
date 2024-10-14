@@ -37,12 +37,6 @@ border: width style colour
 You may specify what side to border, `border-bottom`
 or specify the radius to round the border, `border-radius`
 or specify the radius of a specific corner, `border-to-right-radius`.
-## Shorthand for Margin and Padding
-```css
-margin/padding: 10px /* all sides are 10px */
-margin/padding: 10px 20px /* top and bottom are 10px, left and right are 20px */
-margin/padding: top, right, bottom, left
-```
 ## Box Sizing
 This lets you change exactly how the box model works and how an element’s size is calculated.
 ### Content-Box
