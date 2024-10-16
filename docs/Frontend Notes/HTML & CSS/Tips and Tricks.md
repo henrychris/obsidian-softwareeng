@@ -1,5 +1,6 @@
-# Centreing Content
-Use `auto` left and right margins to centre content.
+# Centring Content
+Setting the `width` of a block-level element keeps it from stretching to the edges of its container. Use `auto` left and right margins to centre it within the container.
+To improve handling on small screens, use `max-width`.
 # Shorthand for Margin and Padding
 ```css
 margin/padding: 10px /* all sides are 10px */
