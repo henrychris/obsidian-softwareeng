@@ -133,3 +133,18 @@ These fonts are installed on every device:
 They should be your backup fonts.
 # Embedding Fonts
 We can use `@font-face` to use fonts that exist on our server. See: [font-face](https://web.dev/learn/css/typography?continue=https%3A%2F%2Fweb.dev%2Flearn%2Fcss%23article-https%3A%2F%2Fweb.dev%2Flearn%2Fcss%2Ftypography#font-face).
+
+## Notes on Font Face
+There are `variable fonts` which contain multiple styles in one. If you are using this, you only need to specify **one** font face. You can specify the weight options & all for this font face.
+```css
+@font-face {
+    font-family: "Figtree";
+    src: local("Figtree"),
+        url("../assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal, 500, 800;
+}
+```
+
+However, if you aren't using a variable font file, then you will need multiple font faces for each file. 
+
+Try to inspect the typography in the Figma file to get the font weights.

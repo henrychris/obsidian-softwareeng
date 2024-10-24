@@ -5,4 +5,5 @@
 - [Shay Howe - Advanced HTML & CSS](https://learn.shayhowe.com/advanced-html-css/)
 - [Yoksel Flex Cheatsheet](https://yoksel.github.io/flex-cheatsheet/)
 - [Flexbox In 8 Minutes - YouTube](https://www.youtube.com/watch?v=phWxA89Dy94)
+- [Font Face - Simmons Edu](http://web.simmons.edu/~grovesd/comm244/notes/week5/font-face)
 - 
