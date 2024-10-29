@@ -26,3 +26,14 @@ Or start a comment immediately after closing an element tag, and end it immediat
   ...
 </section>
 ```
+
+# Aligning Lists With Text
+```css
+ul / ol {
+	list-style-position: inside;
+	padding-left: 0;
+}
+```
+The first rule includes the bullets with the text. The second removes any padding around the list items.
+Reference: [Aligning List With Your Text](https://since1979.dev/aligning-your-lists-with-your-text/)
+

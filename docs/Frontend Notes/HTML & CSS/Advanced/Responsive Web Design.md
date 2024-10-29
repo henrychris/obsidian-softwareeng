@@ -1,12 +1,12 @@
-# Fluid Images
-Place images within containers and set their `max-width` to 100%. This means the image will only fill its container and never overflow. 
+# Fluid Media
+Set the `max-width` of media to 100%. This means the image will only fill its container and never overflow. 
 ```html
-<div class="img">
+<div>
 	<img src="" />
 </div>
 ```
 ```css
-.img {
+img {
 	max-width: 100%;
 }
 ```
