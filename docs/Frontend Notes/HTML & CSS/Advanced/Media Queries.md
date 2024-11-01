@@ -13,4 +13,6 @@ Syntax
 The `breakpoint` goes within the parentheses. This is when the media query applies to the page.
 Example: `min-width` only applies when the viewport width is above a certain value. `max-width` only applies when the viewport width is below a certain value.
 
-Mobile first designs use `min-width` queries to make them responsive on larger screens.
+Mobile first designs use `min-width` queries to make them responsive on larger screens.'
+
+See: [Tutorial](https://www.youtube.com/watch?v=j1AhSWFcZpg), [Media Queries Like A Chameleon](https://www.youtube.com/watch?v=K24lUqcT0Ms).

@@ -6,4 +6,6 @@
 - [Yoksel Flex Cheatsheet](https://yoksel.github.io/flex-cheatsheet/)
 - [Flexbox In 8 Minutes - YouTube](https://www.youtube.com/watch?v=phWxA89Dy94)
 - [Font Face - Simmons Edu](http://web.simmons.edu/~grovesd/comm244/notes/week5/font-face)
-- I found this, might help you understand: https://css-tricks.com/everything-you-need-to-know-about-the-gap-after-the-list-marker/#:~:text=As%20you%20can%20see%2C%20padding,minimum%20gap%20after%20the%20marker.
+- [The Gap After The List Marker](https://css-tricks.com/everything-you-need-to-know-about-the-gap-after-the-list-marker/#:~:text=As%20you%20can%20see%2C%20padding,minimum%20gap%20after%20the%20marker)
+- [Media Queries - Slaying The Dragon](https://www.youtube.com/watch?v=K24lUqcT0Ms)
+- 
