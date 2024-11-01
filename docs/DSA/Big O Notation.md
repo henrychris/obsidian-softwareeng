@@ -1,33 +1,89 @@
----
-share: "true"
----
-# Definition
-Big O is a mathematical notation used to the define the time and memory requirements of an algorithm. It helps software engineers make decisions on which data structures or algorithms to use when solving a problem. 
+Big O is notation used to approximately describe the performance of algorithms, usually with an emphasis on how performance *scales* with *input size*.
+# Simplification Rules
+1. Drop any constant factors
+$$\begin{align}
+O(5n) \implies O(n) \\ \\
 
-	As input grows, how fast does the time taken or memory used grow?
+O(\frac{n}{2}) \implies O(\frac{1}{2} * n) => O(n) \\ \\
+\end{align}
+$$
+2. In a sum, drop smaller items
+$$\begin{align}
+O(n^{2} + n) \implies O(n^{2}) \\ \\
 
-Note that the growth is always with respect to input.
-# What To Note When Calculating Big O
-1. Checks for loops in the algorithm and how many times elements are iterated over.
-2. Remove constants.
-	In an expression like `3n + 2`, we'd simplify it to `O(n)` by removing the constants. Constants can vary based on external factors, so for simplicity sake, they are removed.
-3. Consider the **worst case.** 
-	Developers use Big O to consider how an algorithm scales. The worst case scenario answers this question: `With a large amount of input, how fast does this algorithm perform?`
+O(n + n + n^{4}) \implies O(n^{4}) \\ \\
 
-# Common Big O notations
-1. **O(1)** (Constant Time):
-    - This represents an algorithm that executes in constant time regardless of the input size. It's the most efficient time complexity.
-2. **O(log n)** (Logarithmic Time):
-    - An algorithm with logarithmic time complexity reduces the problem size by a constant fraction with each step. Common in binary search.
-3. **O(n)** (Linear Time):  
-    - The running time of the algorithm is directly proportional to the size of the input. Linear algorithms perform one operation for each element in the input.
-4. **O(n log n)** (Linearithmic Time): 
-    - Algorithms with linearithmic time complexity often occur in efficient sorting algorithms like Merge Sort and Quick Sort.
-5. **O(n^2)** (Quadratic Time): 
-    - The running time grows with the square of the input size. This is common in nested loops and inefficient sorting algorithms like Bubble Sort.
-6. **O(n^k)** (Polynomial Time):
-    - Represents algorithms whose time complexity is a polynomial function of the input size. Higher values of k indicate more significant growth in running time.
-7. **O(2^n)** (Exponential Time):
-    - Algorithms with exponential time complexity grow rapidly as the input size increases. These are often considered highly inefficient.
-8. **O(n!)** (Factorial Time):
-    - Represents the worst-case scenario where the running time increases factorially with the input size. This is extremely inefficient.
+O(n^{4} - n^{3}) \implies O(n^{4})
+\end{align}
+$$
+*Do not subtract. This is not algebra!*
+
+Algorithms are measured on a scale & used to measure time and space complexity.
+- **Space Complexity:** How much memory an algorithm uses
+- **Time Complexity:** How much time an algorithm takes to run, based on the size of the input. It is not the running time, but instead the number of operations needed to run.
+# Scale
+![[complexity.png]]
+
+- $O(n!)$ - factorial
+- $O(c^n)$ - exponential
+- $O(n^c)$ - polynomial
+- $O(n \space log \space n)$
+- $O(n)$ - linear
+- $O(log(n))$ - logarithmic
+- $O(1)$ - constant. Performance does not scale with input, it uses the same space or no. of operations regardless of input size.
+
+Regarding simplification, the chart above is important. A big O measurement is a large term than the one below it in the chart. As input size increases, the value of the higher terms increase dramatically compared to those below it.
+
+An example:
+$$
+O(2^{n} + n^{10})
+$$
+$2^{n}$ = exponential
+$n^{10}$ = polynomial
+
+Assume n = 100
+$$\begin{align}
+2^{10} = 1.26 \times 10^{30} \\ \\
+
+10^{10} = 1 \times 10^{20}
+\end{align}
+$$
+
+Therefore, just like in the chart, exponential > polynomial.
+
+# Measuring Complexity
+- When measuring space complexity
+	- no variables created = $O(1)$.
+	- if adding variables to an array, it might be $O(n)$ if it depends on the input size, $n$.
+
+- When measuring time complexity
+	- When an operation occurs within another (like within a loop), multiply their complexities together
+	- A loop within a loop is $O(n^{2})$.
+	- When operations occur in sequential order (not within one another), add their complexities together
+## Examples 
+1. Sum of array elements
+```js
+function sumArray(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+```
+
+Time complexity = $O(n)$ because the loop iterates over each item in the array.
+Space complexity = $O(1)$ because only one variable is created.
+
+2. Factorial Calculation
+```js
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+```
+
+The time complexity is $O(n)$. The function will be called $n$ times until a result is returned.
+The space complexity is O(n) as well. Each time the function is called, a new layer is place on the stack. 
