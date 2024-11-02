@@ -65,5 +65,6 @@ function anagrams(s1: string, s2: string) {
 }
 ```
 
-// add space and time complexity
+time = O(1) + O(n) + O(n) => O(n)
+space = O(1) because it will never have more than 26 chars (alphabet)
 

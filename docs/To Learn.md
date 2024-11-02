@@ -2,9 +2,9 @@
 share: "true"
 ---
 # Courses
-- [Full Stack part0 | Fundamentals of Web apps](https://fullstackopen.com/en/part0/fundamentals_of_web_apps)
+- [Full Stack part0 - Fundamentals of Web apps](https://fullstackopen.com/en/part0/fundamentals_of_web_apps)
 - [Algorithms and Data Structures](https://frontendmasters.com/courses/algorithms)
-- [Mathematics for Computer Science | Electrical Engineering and Computer Science | MIT OpenCourseWare](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/)
+- [Mathematics for Computer Science - MIT OpenCourseWare](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/)
 - [Advanced C#](https://www.freecodecamp.org/news/learn-advanced-c-concepts/)
 - [The Missing Semester of Your CS Education (mit.edu)](https://missing.csail.mit.edu/)
 - [VS Code Course](https://frontendmasters.com/courses/customize-vs-code/)
@@ -13,9 +13,9 @@ share: "true"
 - [How to Stand Out With Your CV](https://youtu.be/kJTxH1hCa7c)
 
 # Articles
-- [How ASP.NET MVC 6 discovers controllers? | Strathweb. A free flowing tech monologue.](https://www.strathweb.com/2015/04/asp-net-mvc-6-discovers-controllers/)
+- [How ASP.NET MVC 6 discovers controllers? - Strathweb](https://www.strathweb.com/2015/04/asp-net-mvc-6-discovers-controllers/)
 - [When ASP.NET Core can't find your controller: debugging application parts (andrewlock.net)](https://andrewlock.net/when-asp-net-core-cant-find-your-controller-debugging-application-parts/)
-- [What I learnt from building 3 high traffic web applications on an embedded key value store. | by Anthony Alaribe | HackerNoon.com | Medium](https://medium.com/hackernoon/what-i-learnt-from-building-3-high-traffic-web-applications-on-an-embedded-key-value-store-68d47249774f)
+- [What I learnt from building 3 high traffic web applications on an embedded key value store - Anthony Alaribe ](https://medium.com/hackernoon/what-i-learnt-from-building-3-high-traffic-web-applications-on-an-embedded-key-value-store-68d47249774f)
 - [What do you do about the High Shege/minute you get from API integrations? | by Anthony Alaribe](https://tonyalaribe.medium.com/what-do-you-do-about-the-high-shege-minute-you-get-from-api-integrations-90770d14066f)
 - [API Versioning](https://dateo-software.de/blog/web-api-versioning?utm_source=csharpdigest&utm_medium&utm_campaign=1722) 
 - [The Joel Test: 12 Steps to Better Code](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
@@ -28,9 +28,8 @@ share: "true"
 ## Fintech Engineering
 - [Building a Modern Bank Backend (monzo.com)](https://monzo.com/blog/2016/09/19/building-a-modern-bank-backend)
 - [Some things you should know if you're building an API/Backend for Financial Services](https://foam-farmer-938.notion.site/Some-things-you-should-know-if-you-re-building-an-API-Backend-for-Financial-Services-c6f4cacc554d4ee4be8ba211c450bb7e)
-- [Race Conditions, Yahoo Boys Syndicates & Fintechs | by 32bitsret | Oct, 2023 | Medium](https://medium.com/@retnan/race-conditions-yahoo-boys-syndicates-fintechs-e8a0fac9f015)
+- [Race Conditions, Yahoo Boys Syndicates & Fintechs - 32bitsret](https://medium.com/@retnan/race-conditions-yahoo-boys-syndicates-fintechs-e8a0fac9f015)
 - [Fintech 101](https://x.com/edemkumodzi/status/1724955985150878125?s=20)
-
 # From Twitter
 - [More on Modular Monoliths](https://x.com/mjovanovictech/status/1715986490893725965?s=20)
 - [Communication For Backend Devs](https://t.co/VyYUuLVFmJ)
