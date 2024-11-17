@@ -1,7 +1,5 @@
 # Tell Me About Yourself
 
-^06755c
-
 I'm Henry Ihenacho Chukwuemeka. I studied MIS at Covenant University, while I was there I interned here at Fuelmetrics back when the company was located at Yaba. 
 
 I initially wanted to go into Consulting, and got a job at Fritova located in Berger. But I turned it down and joined ErrandPay as a backend dev. I learned a fair amount about the internals of fintech. The part that surprised me most is the sheer amount of partners involved in a single transaction. 

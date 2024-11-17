@@ -1,0 +1,1 @@
+A CTE aka Common Table Expression is a named temporary table/result set within a query.
