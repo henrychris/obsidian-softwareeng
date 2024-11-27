@@ -1,1 +1,4 @@
-[Rsync Phd Thesis](https://rsync.samba.org/~tridge/phd_thesis.pdf)
+- [Rsync Phd Thesis](https://rsync.samba.org/~tridge/phd_thesis.pdf)
+- [Intro To Distributed Systems](https://gowthamk.github.io/csci7000_s21/docs/google-intro.pdf)
+- [The Humble Programmer](http://rkka21.ru/docs/turing-award/ed1972e.pdf)
+- 
