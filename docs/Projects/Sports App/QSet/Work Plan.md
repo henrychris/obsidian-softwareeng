@@ -1,11 +1,9 @@
 # 1. Core Game Management
-- Create team
-- Remove team
+- ~~Create team~~ 
+- ~~Remove team~~
 - Add team to match
 - Remove team from match
-- Edit team in match
-- Edit team in queue
-- Remove team from queue
+- ~~Edit team~~
 - Move team up in queue
 - Move team down in queue
 - Left side wins

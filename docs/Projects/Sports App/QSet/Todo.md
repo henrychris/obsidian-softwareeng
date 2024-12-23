@@ -1,0 +1,4 @@
+- edit teams in match
+- move team in match into queue (swap with the first team in queue)
+- "league" table , ordered by points and then no of W/D/L
+- undo/redo

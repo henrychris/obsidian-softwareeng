@@ -16,3 +16,7 @@ Docker is a platform for developing, shipping and running apps using containeris
 
 
 Related: [[Using Docker for SQLServer in .NET]], [How to containerize your ASP.NET Core application and SQL Server with Docker](https://www.twilio.com/blog/containerize-your-aspdotnet-core-application-and-sql-server-with-docker), [Docker for .NET Developers (Part 1)](https://www.stevejgordon.co.uk/docker-dotnet-developers-part-1), [Why isn't my ASP.NET Core app in Docker working? (andrewlock.net)](https://andrewlock.net/why-isnt-my-aspnetcore-app-in-docker-working/)
+
+- [Nuget and Docker](https://blog.devops.dev/consuming-private-nuget-feeds-from-a-dockerfile-in-a-secure-and-devops-friendly-manner-b5c90ea90bba)
+- [Build Args in Docker Compose](https://stackoverflow.com/questions/50734271/how-to-define-build-args-in-docker-compose)
+- 
