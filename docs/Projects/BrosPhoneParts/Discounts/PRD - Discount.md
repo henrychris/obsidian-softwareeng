@@ -25,7 +25,7 @@ Order discounts are a bit more complex:
 	- The admin provides a discount value, greater than 0.
 	- The admin may optionally provide a reason for the discount, which is displayed to the customer.
 
-An `Order` may have zero or multiple discounts applied. An `OrderItem` may have zero or one discounts applied.
+An `Order` may have zero or multiple discounts applied. An `OrderItem` may have zero or one discounts applied on this screen.
 # Discount Section
 ![[discount-overview.png]]
 ![[select-discount-type.png]]

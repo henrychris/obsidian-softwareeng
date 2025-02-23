@@ -61,36 +61,43 @@ enum DiscountStatus {
   Expired
 }
 
-model AppliedDiscount {
-  id        String              @id @default(uuid())
-  type      AppliedDiscountType
-  valueType DiscountValueType
-  value     Decimal             @db.Decimal(10, 2)
-  reason    String?
-
-  // For pre-configured discounts
-  discountId String?
-  discount   Discount? @relation(fields: [discountId], references: [id])
-
-  /// The order this discount was applied to. This is optional.
-  /// A discount may be applied to an entire order or to a specific item in an order. Not both.
-  orderId String?
-  order   Order?  @relation(fields: [orderId], references: [id])
-
-  /// The order item this discount was applied to. This is optional.
-  /// A discount may be applied to an entire order or to a specific item in an order. Not both.
-  orderItemId String?    @unique
-  orderItem   OrderItem? @relation(fields: [orderItemId], references: [id])
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@map("appliedDiscounts")
-}
-
 enum DiscountValueType {
   FixedAmount
   Percentage
+}
+
+model DraftAppliedDiscount {
+  id          String   @id @default(uuid())
+  
+  type      AppliedDiscountType
+  valueType DiscountValueType?
+  value     Decimal?            @db.Decimal(10, 2)
+  reason    String?
+  
+  // For tracking non-custom discounts
+  discountId  String?
+  discount    Discount? @relation(fields: [discountId], references: [id])
+  
+  // Relations - only one will be populated
+  draftOrderId String?
+  draftOrder   DraftOrder? @relation(fields: [draftOrderId], references: [id])
+  
+  draftOrderItemId String?
+  draftOrderItem   DraftOrderItem? @relation(fields: [draftOrderItemId], references: [id])
+
+  // Track which customer used the discount
+  customerId String?
+  customer   Customer? @relation(fields: [customerId], references: [id])
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("draftAppliedDiscounts")
+}
+
+enum DraftAppliedDiscountEntityType {
+	DraftOrder
+	DraftOrderItem
 }
 
 enum AppliedDiscountType {
@@ -100,4 +107,76 @@ enum AppliedDiscountType {
 }
 ```
 
-# 
+# Removed Code
+```ts
+async function applyAutomaticDiscounts(
+  items: OrderItemInput[],
+  storeId: string,
+  customer: OrderCustomerInput | undefined | null,
+): Promise<DiscountResult> {
+  log.debug(`Fetching and applying automatic discounts`);
+  const activeAutomaticDiscounts = await prisma.discount.findMany({
+    where: {
+      storeId,
+      method: DiscountMethod.Automatic,
+      type: DiscountType.AmountOffOrder, // Feb 20, 2025 - from my tests, only order discounts are applied automatically
+      status: DiscountStatus.Active,
+      startDate: { lte: new Date() },
+      OR: [{ endDate: null }, { endDate: { gt: new Date() } }],
+    },
+    include: {
+      _count: {
+        select: {
+          appliedDiscountsOnDraftOrders: true,
+        },
+      },
+      selectedCustomers: true,
+    },
+  });
+
+  let itemDiscounts: ItemWithDiscounts[] = [];
+  let orderDiscounts: LeanAppliedDiscount[] = [];
+
+  for (const discount of activeAutomaticDiscounts) {
+    log.debug(`Checking eligibility for automatic discount: ${discount.id}`);
+    const mappedDiscount = {
+      ...discount,
+      numberOfDiscountUses: discount._count.appliedDiscountsOnDraftOrders,
+    };
+
+    const discountValidationResult = await validateDiscountRequirements(
+      mappedDiscount,
+      items,
+      customer,
+    );
+    if (discountValidationResult.success) {
+      log.debug(`Applying automatic discount: ${discount.id}`);
+      const appliedDiscountResult = await applyDiscount(
+        {
+          items,
+          discount: {
+            id: discount.id,
+            type: discount.type,
+            method: discount.method,
+            configuration: discount.configuration as AllConfig,
+          },
+        },
+        storeId,
+      );
+
+      itemDiscounts = mergeItemDiscounts(
+        itemDiscounts,
+        appliedDiscountResult.itemsWithDiscounts,
+      );
+      orderDiscounts = orderDiscounts.concat(
+        appliedDiscountResult.orderDiscounts,
+      );
+    }
+  }
+
+  return {
+    itemsWithDiscounts: itemDiscounts,
+    orderDiscounts,
+  };
+}
+```
