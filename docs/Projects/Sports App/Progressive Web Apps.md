@@ -121,3 +121,10 @@ Caching requires the `Fetch`, `Cache` and `ServiceWorker` APIs. Resources can be
 See:
 - [[What makes a good Progressive Web App](https://web.dev/articles/pwa-checklist)](https://web.dev/articles/pwa-checklist)
 - [Best practices for PWAs](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/best-practices)
+
+## Icons
+If you need to pick only one icon size, it should be 512 by 512 pixels. However, providing more sizes is recommended including 192 by 192, 384 by 384, and 1024 by 1024 pixel-sized images, too.
+- 1024 x 1024
+- 512 x 512
+- 384 x 384
+- 192 x 192
