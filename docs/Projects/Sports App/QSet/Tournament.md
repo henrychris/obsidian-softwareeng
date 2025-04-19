@@ -1,0 +1,6 @@
+- (Optional) Continue after a tournament
+	- Generates a new round of fixtures.
+- Tests for QSet
+- Enhanced Tournament Mode
+- Add Spectator View
+	- Maybe get on a call with Wale Mercy on twitter.
