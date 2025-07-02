@@ -29,4 +29,4 @@ function bs_list(haystack: number[], needle: number): boolean {
 	3. if value < target, cut out the left side of the array. Set `low` to the midpoint, plus one to exclude the value.
 4. Repeat while `low` < `high`.
 
-The time complexity is **O(log n)**, because the search space reduces with each iteration. 
+The time complexity is **O(log n)**, because the search space reduces with each iteration. For more on time complexity, refer to [[05-data-structures-and-algorithms/Data Structures/Big O Notation]]. 

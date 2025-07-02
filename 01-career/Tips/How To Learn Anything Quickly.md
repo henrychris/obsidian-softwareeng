@@ -8,3 +8,5 @@
 	- PERFECT WHEN FINISHED
 
 For code, you can plan components or functions and what will be needed in them.
+
+This approach to learning is also relevant to the broader goals outlined in [[11-learning-and-resources/To Learn]].

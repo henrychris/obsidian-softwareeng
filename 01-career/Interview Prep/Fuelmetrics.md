@@ -4,7 +4,7 @@ I'm Henry Ihenacho Chukwuemeka. I studied MIS at Covenant University, while I wa
 
 I initially wanted to go into Consulting, and got a job at Fritova located in Berger. But I turned it down and joined ErrandPay as a backend dev. I learned a fair amount about the internals of fintech. The part that surprised me most is the sheer amount of partners involved in a single transaction. 
 
-I'm currently between roles, and I've been keeping busy. I've been working on some side-projects, one is a possible SaaS targeted towards writers, I attended a hackathon and built a fintech product in a week. I've also been solving coding challenges, and writing articles on my Medium page.
+I'm currently between roles, and I've been keeping busy. I've been working on some side-projects, one is a possible SaaS targeted towards writers, I attended a hackathon and built a fintech product in a week. I've also been solving coding challenges, and writing articles on my Medium page. Keeping a record of these achievements in a [[01-career/My Brag Document]] can be very beneficial for interviews.
 
 I was looking for something new and decided to reach out to Fuelmetrics, because I had a good experience last time I was here, and I really enjoy working in smaller teams. It's also great that the company's main product helps solve a problem I've faced many times over.
 

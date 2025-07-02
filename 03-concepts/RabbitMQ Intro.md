@@ -6,7 +6,7 @@ It is a message broker that implements the AMQP message model (v0.91). Instead o
 An exchange can connect to many queues, and the queues are connected to the consuming services (many services can connect to one queue). The exchanges use connections called **bindings**, which can be referenced using a **binding key**.
 RabbitMQ is cloud-friendly, language independent, highly secure, utilizes acknowledgments, has a rich plugin ecosystem and comes with management UI and CLI tools.
 
-More on [[Message Brokers]]. 
+More on [[03-concepts/Message Brokers]]. 
 ### Types of Exchanges
 1. **Fanout** - As messages are produced, they are duplicated and sent to every connected queue. Binding keys are ignored so just use an empty string.
 2. **Direct** - As messages are produced, they receive a **routing key** (at the producer). The key is compared to the binding key of the queue, and if they match, it moves on to that queue (and the services).

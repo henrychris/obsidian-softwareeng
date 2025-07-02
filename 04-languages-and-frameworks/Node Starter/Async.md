@@ -1,4 +1,4 @@
-Node is single-threaded. All events are handled on a single thread. This means that any long-running synchronous operations will block your application from handling other requests.
+Node is single-threaded. All events are handled on a single thread. This means that any long-running synchronous operations will block your application from handling other requests. For a broader understanding of asynchronous operations, refer to [[03-concepts/Asynchronous Operations]].
 ```js
 setTimeout(function () {
   console.log("First");

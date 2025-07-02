@@ -12,4 +12,4 @@ They help decouple systems, as producers and consumers need not directly interac
 4. **Load Balancing**: Message brokers can distribute messages to multiple consumers, balancing the workload. This is particularly useful for ensuring fair processing when dealing with a large number of messages.
 5. **Scalability**: Message brokers can be distributed and scaled to handle increased message loads and provide high availability. They are a key component in building scalable and resilient systems.
 
-Related: [What is RabbitMQ?](https://www.youtube.com/watch?v=7rkeORD4jSw), [[RabbitMQ Intro]]
+Related: [[03-concepts/RabbitMQ Intro]], [What is RabbitMQ?](https://www.youtube.com/watch?v=7rkeORD4jSw)

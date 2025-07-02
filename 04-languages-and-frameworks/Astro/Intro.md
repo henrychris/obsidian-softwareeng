@@ -1,6 +1,6 @@
 1. Run `npm create @astro/latest`
 2. Add markdown files to `src/pages/posts`.
-3. Add JavaScript or TypeScript code within the fences (known as the frontmatter script):
+3. Add JavaScript or TypeScript code within the fences (known as the frontmatter script). For more on setting up TypeScript projects, see [[04-languages-and-frameworks/Typescript Simplified/Initialising a TS Project]] or [[04-languages-and-frameworks/Node Starter/Typescript Setup]].
 ```astro
 ---
 const pageTitle = "pageTitle";

@@ -4,6 +4,8 @@ Some semantic elements are: `<section>`, `<nav>` and `<header>`.
 A block-level element is displayed on a new line and takes up all horizontal space.
 An inline-level element is displayed on the same line, taking up the same width as its content.
 
+These display properties directly influence how elements interact with the [[CSS - Box Model]].
+
 `<span>` is usually used for smaller content within a block-level element. e.g:
 ```html
 <p>

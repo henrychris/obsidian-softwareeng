@@ -1,7 +1,7 @@
 # Setup
 I created a new project with: `nest new project-name --strict`. The strict flag creates a project with strict Typescript config.
 
-I used `nest g resource [resource-name]` to create a new resource. A resource is an entity we wish to perform CRUD operations on. This command creates a controller, service, entity, dto, test files and module for the resource, in a folder named after said resource.
+I used `nest g resource [resource-name]` to create a new resource. A resource is an entity we wish to perform CRUD operations on. This command creates a controller, service, entity, dto, test files and module for the resource, in a folder named after said resource. The generation of test files highlights the importance of [[03-concepts/Unit Testing]] and [[03-concepts/Integration Testing]] in development.
 The module is also added to the `AppModule`.
 
 I prefer to change the main.ts file to use callbacks, instead of await-ing when starting the application. This way, I can log the application URL.
@@ -26,15 +26,15 @@ async function bootstrap() {
 bootstrap();
 ```
 
-Modules group controllers and services together. I think it's best to group services and controllers for a module, then register the module in `AppModule`. This way, we only register a single Module in `main.ts`. Seems clean and orderly to me.
+Modules group controllers and services together. This modular approach aligns well with the principles of a [[03-concepts/Modular Monolith]]. I think it's best to group services and controllers for a module, then register the module in `AppModule`. This way, we only register a single Module in `main.ts`. Seems clean and orderly to me.
 
 Use `nest g service [service-name]` and `nest g module [module-name]` to create a service and module respectively.
 
-To authorise requests, we will use [guards](https://docs.nestjs.com/guards).
+NestJS also supports integration with various messaging patterns and [[03-concepts/Message Brokers]], allowing for robust, scalable, and decoupled architectures.
 
 # Configuration
 Install two packages: `@nestjs/config` and `joi`.
-In `AppModule`, set up the `ConfigModule` from `@nestjs/config` and register it as a global module. It's best to add validation with `joi` here, so the application fails to start if config is missing.
+In `AppModule`, set up the `ConfigModule` from `@nestjs/config` and register it as a global module. It's best to add validation with `joi` here, so the application fails to start if config is missing. This approach to configuration and secrets management is similar to concepts discussed in [[06-backend/Dotnet Configuration - Secrets]].
 
 ```ts
 @Module({
@@ -92,7 +92,7 @@ const PORT: number = configService.getOrThrow('PORT');
 
 Reference: [NestJs Configuration](https://docs.nestjs.com/techniques/configuration)
 # Database & Migrations
-I currently prefer to use TypeORM.
+I currently prefer to use TypeORM. For database seeding concepts, refer to [[03-concepts/DB Seeding]].
 First, I added properties to my database config interface.
 ```ts
 export default interface DatabaseConfig {

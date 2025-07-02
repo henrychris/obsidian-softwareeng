@@ -7,8 +7,10 @@
 - Never use a GET query for a mutation. 
 
 # Two Main Auth Mechanisms
-- Bearer Token
+- Bearer Token (See: [[10-security/Refresh Tokens]])
 - Authentication Cookie
+
+For a deeper understanding of the difference between authentication and authorization, refer to [[10-security/Authentication v Authorization]].
 ## Token Security
 - Don't store token in local storage
 - Store in HttpOnly, Secure cookie

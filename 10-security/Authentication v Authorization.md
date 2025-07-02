@@ -5,7 +5,7 @@ share: "true"
 - Authentication involves verifying the identity of a user, aka, "Who are you?" It involves verifying the credentials provided by a user or entity to confirm their identity.
 - Authorisation is concerned with determining the actions a verified user or entity can perform on a system, aka "What are you allowed to do?" It defines what resources they can access or the permissions and privileges granted to them.
 
-This used to be done using sessions. 
+This used to be done using sessions. For modern token-based authentication, see [[10-security/Refresh Tokens]]. 
 #### Session
 - User login credentials are verified. If correct, the user is stored in the session (which is stored in server memory), and they receive a unique ID - a session ID. 
 - The session ID is sent back as a cookie. For every request, the session ID and cookie are sent to the server.

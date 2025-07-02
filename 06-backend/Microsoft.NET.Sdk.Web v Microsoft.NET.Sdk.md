@@ -1,1 +1,1 @@
-The former is typically used when creating web applications, and contains the APIs suited to them. The latter is more general purpose and can be used for various types of projects. You can change it in the `.csproj` file if necessary.
+The former is typically used when creating web applications, and contains the APIs suited to them. The latter is more general purpose and can be used for various types of projects. You can change it in the `.csproj` file if necessary. This choice is particularly relevant when structuring projects, such as in a [[03-concepts/Modular Monolith]].

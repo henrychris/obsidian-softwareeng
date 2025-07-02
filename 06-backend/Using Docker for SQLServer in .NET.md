@@ -13,7 +13,7 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=testPassword123@" -p 1433:14
 ```
 
 - -p: Sets the port
-- -e: Sets environment variables
+- -e: Sets environment variables. For managing sensitive information like passwords, refer to [[06-backend/Dotnet Configuration - Secrets]].
 	- ACCEPT_EULA: Self explanatory
 	- MSSQL_SA_PASSWORD: Sets a password for the system admin, sa.
 - -d: Runs the container in detached mode.

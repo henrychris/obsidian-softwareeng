@@ -1,2 +1,3 @@
 - [Fire Engine RED]([Careers | Fire Engine RED | Fully Remote Company (fire-engine-red.com)](https://www.fire-engine-red.com/careers/))
+- When considering new opportunities, maintaining a [[01-career/My Brag Document]] can be helpful to track your achievements and experiences.
 - 

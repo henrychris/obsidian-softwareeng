@@ -10,4 +10,4 @@ function linear_search(haystack: number[], needle: number): boolean {
 }
 ```
 
-The time complexity is **O(n).**
+The time complexity is **O(n).** For more on time complexity, refer to [[05-data-structures-and-algorithms/Data Structures/Big O Notation]].

@@ -1,4 +1,4 @@
-Write an algorithm to check if a number is prime or not.
+Write an algorithm to check if a number is prime or not. This problem demonstrates how algorithmic optimizations can significantly impact performance, a concept central to [[05-data-structures-and-algorithms/Data Structures/Big O Notation]].
 # Solution #1
 We can brute force a solution by dividing the number by every number before it, except itself & 1.
 ```ts

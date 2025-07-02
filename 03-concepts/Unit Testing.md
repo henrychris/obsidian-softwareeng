@@ -12,7 +12,7 @@ _signInManagerMock = new Mock<SignInManager<ApplicationUser>>(
     Mock.Of<IUserClaimsPrincipalFactory<ApplicationUser>>(), null!, null!, null!, null!);
 ```
 
-- Testing your JWT generation function is good practice. It helps ensure that:
+- Testing your JWT generation function is good practice. This is especially relevant when dealing with authentication mechanisms like [[10-security/Refresh Tokens]]. It helps ensure that:
 	1. The function correctly generates a token.
 	2. The token contains the expected claims.
 	3. The token is signed using the correct security key and algorithm.

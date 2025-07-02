@@ -24,11 +24,14 @@ function anagrams(s1: string, s2: string) {
 
 This is $O(n \space log \space n)$ time complexity. `split` and `join` are $O(N)$ as well as the string comparison `s1 === s2`.
 `sort` is $O(n \space log \space n)$. Since these operations occur after another, we have:
+
 $$\begin{align}
 O(n + n + n + (n \log n)) \implies O(n \log n)
 \end{align}
 $$
-Space complexity is $O(n)$. We create 2 new arrays and assign to `s1` & `s2`. This is originally $O(n + n)$ which is then simplified.
+
+Space complexity is $O(n)$. We create 2 new arrays and assign to `s1` & `s2`. This is originally $O(n + n)$ which is then simplified. For more on complexity analysis, refer to [[05-data-structures-and-algorithms/Data Structures/Big O Notation]].
+
 # Solution #2
 Here we use hash maps to optimise the solution. We store each character as a key in the map. Each time the character is found in `s1` we add or find a key and increment its value by 1. Each time we find the character in `s2`, we add or find the key and decrement its value by 1.
 If the same characters occur in both strings, with the same frequency, the final value for all keys should be 0. If any key has a positive or negative value, the strings are not anagrams.

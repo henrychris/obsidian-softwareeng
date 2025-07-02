@@ -1,2 +1,2 @@
-- ***Records*** are structures designed to hold data only with no associated functionality. They are immutable and once created, the data can't be changed. They are suitable for simple entities, DTOs, configuration settings.
+- ***Records*** are structures designed to hold data only with no associated functionality. They are immutable and once created, the data can't be changed. They are suitable for simple entities, DTOs, configuration settings. This concept can be useful when designing data structures, as discussed in [[03-concepts/Pseudocode]].
 - ***Classes*** on the other hand combine both data and functionality. They are mutable. They are preferred for complex objects such as domain models.

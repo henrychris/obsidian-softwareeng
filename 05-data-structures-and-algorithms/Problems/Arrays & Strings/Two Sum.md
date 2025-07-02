@@ -19,9 +19,9 @@ const pairSum = (numbers: number[], targetSum: number) => {
 };
 ```
 # Solution #2
-We have a target sum as an argument. As we iterate through the array, we calculate the `complement` by subtracting the value at the current index from our target. Then, we check if a key with this complement value exists in our hash map. 
+We have a target sum as an argument. As we iterate through the [[05-data-structures-and-algorithms/Data Structures/Arrays]], we calculate the `complement` by subtracting the value at the current index from our target. Then, we check if a key with this complement value exists in our hash map. 
 Our hashmap stores values & their indexes: `{ 3:0, 2:1, 5:2 }`. If the complement does not exist, then we add the current value to the hash map. 
-This solution is $O(n)$ for both time and space complexity. 
+This solution is $O(n)$ for both time and space complexity. For more on complexity analysis, refer to [[05-data-structures-and-algorithms/Data Structures/Big O Notation]]. 
 ```ts
 type NumStuff = { [key: number]: number };
 const pairSum = (numbers: number[], targetSum: number) => {

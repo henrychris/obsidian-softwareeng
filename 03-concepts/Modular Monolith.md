@@ -44,7 +44,10 @@ builder.Services.AddAuthentication(options =>
     });
 builder.Services.AddAuthorization();
 ```
-The application configures authentication and authorization. It specifies the authentication scheme as JwtBearer, sets up token validation parameters, and includes authorization services. It also retrieves security-related settings and secrets from configuration files(as explained in [[#Dotnet Secrets]]).
+The application configures authentication and authorization. It specifies the authentication scheme as JwtBearer, sets up token validation parameters, and includes authorization services. For more details on managing authentication tokens, refer to [[10-security/Refresh Tokens]]. It also retrieves security-related settings and secrets from configuration files(as explained in [[#Dotnet Secrets]]).
+
+### Testing in a Modular Monolith
+Testing is crucial for a modular monolith. [[03-concepts/Integration Testing]] helps verify interactions between modules, while [[03-concepts/Unit Testing]] ensures individual components work correctly. Database setup for testing often involves [[03-concepts/DB Seeding]].
 
 ```
 if (app.Environment.IsDevelopment())

@@ -10,5 +10,5 @@ share: "true"
 - DDIA by Martin Kleppman
 - Thinking In Systems
 - [How To Win Friends And Influence People](https://www.amazon.com/How-win-Friends-Influence-People/dp/8189297813)
-- [[Reading/The Software Engineers Guidebook]]
+- [[11-learning-and-resources/Reading/The Software Engineers Guidebook]]
 - [[The Art of Readable Code]]

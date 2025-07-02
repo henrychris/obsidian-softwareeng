@@ -42,6 +42,8 @@ This removes an element from an array, the time complexity also varies.
 - Arrays are a fixed size, contiguous block of memory.
 - They do not grow automatically.
 
+## Comparison with Linked Lists
+Unlike [[05-data-structures-and-algorithms/Data Structures/Linked Lists]], arrays store elements in contiguous memory, offering O(1) access time but O(n) for insertions/deletions in the middle. Linked lists, while having O(1) insertion/deletion at ends, require O(n) for access and middle operations due to non-contiguous memory allocation.
 
 # Algorithms
 1. [[Linear Search]]

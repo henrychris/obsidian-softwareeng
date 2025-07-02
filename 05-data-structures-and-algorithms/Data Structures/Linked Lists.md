@@ -22,3 +22,6 @@ A doubly linked list stores data and links to both the **previous** and **next**
 - **Append**: If there's a pointer to the head or tail, it is **O(1)**.
 - **Prepend**: If there's a pointer to the head or tail, it is **O(1)**.
 
+## Comparison with Arrays
+In contrast to [[05-data-structures-and-algorithms/Data Structures/Arrays]], linked lists do not store elements in contiguous memory. This allows for efficient O(1) insertions and deletions at the beginning or end (if pointers are maintained), but random access and middle operations are O(n) due to the need for traversal.
+

@@ -15,7 +15,9 @@ Docker is a platform for developing, shipping and running apps using containeris
 9. **Efficiency**: Containers use fewer system resources compared to traditional virtual machines, making them efficient for running multiple applications on a single host.
 
 
-Related: [[Using Docker for SQLServer in .NET]], [How to containerize your ASP.NET Core application and SQL Server with Docker](https://www.twilio.com/blog/containerize-your-aspdotnet-core-application-and-sql-server-with-docker), [Docker for .NET Developers (Part 1)](https://www.stevejgordon.co.uk/docker-dotnet-developers-part-1), [Why isn't my ASP.NET Core app in Docker working? (andrewlock.net)](https://andrewlock.net/why-isnt-my-aspnetcore-app-in-docker-working/)
+For a practical application of Docker concepts, especially in a .NET environment with SQL Server, refer to the note on [[06-backend/Using Docker for SQLServer in .NET]].
+
+Related: [[06-backend/Using Docker for SQLServer in .NET]], [How to containerize your ASP.NET Core application and SQL Server with Docker](https://www.twilio.com/blog/containerize-your-aspdotnet-core-application-and-sql-server-with-docker), [Docker for .NET Developers (Part 1)](https://www.stevejgordon.co.uk/docker-dotnet-developers-part-1), [Why isn't my ASP.NET Core app in Docker working? (andrewlock.net)](https://andrewlock.net/why-isnt-my-aspnetcore-app-in-docker-working/)
 
 - [Nuget and Docker](https://blog.devops.dev/consuming-private-nuget-feeds-from-a-dockerfile-in-a-secure-and-devops-friendly-manner-b5c90ea90bba)
 - [Build Args in Docker Compose](https://stackoverflow.com/questions/50734271/how-to-define-build-args-in-docker-compose)

@@ -2,7 +2,7 @@
 > 
 > You can assume that the input string is non-empty.
 
-The approach I used is the same in both solutions. The time and space complexity are O(n) for both too. The only difference is how the count checking is performed.
+The approach I used is the same in both solutions. The time and space complexity are O(n) for both too. The only difference is how the count checking is performed. This problem highlights the efficiency of using hash maps for character counting, a common technique when working with [[05-data-structures-and-algorithms/Data Structures/Arrays]] or strings. For more on complexity analysis, refer to [[05-data-structures-and-algorithms/Data Structures/Big O Notation]].
 I used a hash map to store each character & the number of times it appeared in the string.
 # Solution #1
 ```ts

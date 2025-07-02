@@ -18,4 +18,4 @@ function bubble_sort(arr: number[]): void {
 }
 ```
 
-The time complexity is **O(n ^ 2).** The input is iterated over twice.
+The time complexity is **O(n ^ 2).** The input is iterated over twice. For more on time complexity, refer to [[05-data-structures-and-algorithms/Data Structures/Big O Notation]].

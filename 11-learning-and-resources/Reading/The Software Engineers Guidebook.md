@@ -21,7 +21,7 @@
 1. Get **impactful** stuff done. Ship high-quality code at a decent pace and over-deliver when necessary. Understand the team's priorities so you know what to do.
 2. Make sure people **know** you are getting stuff done!
 	- When you finish a task, let people know you are done!
-3. Keep a work log. **VERY** important. Check [[../../01-career/Brag Document Template]] and [[../../01-career/My Brag Document]]
+3. Keep a work log. **VERY** important. Check [[01-career/Brag Document Template]] and [[01-career/My Brag Document]]
 4. Keep track of plans for the day and log what was done at the end.
 
 ## Ask And Give Feedback

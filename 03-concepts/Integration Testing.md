@@ -22,7 +22,7 @@ In the [[../02-projects/Event Management API]], you can write a unit test for th
 - [Integration testing | ASP.NET Core 5 REST API Tutorial 15 - YouTube](https://www.youtube.com/watch?v=7roqteWLw4s)
 - [Writing robust integration tests in .NET with WireMock.NET - YouTube](https://www.youtube.com/watch?v=YU3ohofu6UU&t=311s)
 - [The Testing Technique Everyone Should Use in .NET - YouTube](https://www.youtube.com/watch?v=dasbRVz5MXo)
-- [How To Reset Your Database when testing](https://www.youtube.com/watch?v=E4TeWBFzcCw&t=43s)
+- [How To Reset Your Database when testing](https://www.youtube.com/watch?v=E4TeWBFzcCw&t=43s) (Related to [[03-concepts/DB Seeding]])
 - [asp.net core - How to use WebApplicationFactory in .net6 (without speakable entry point) - Stack Overflow](https://stackoverflow.com/questions/69058176/how-to-use-webapplicationfactory-in-net6-without-speakable-entry-point)
 - [ASP.NET Core Integration Tests Code Snippets](https://gist.github.com/Elfocrash/101ffc29947832545cdaebcb259c2f44)
 - [C# - Using WebApplicationFactory in .Net 6 without startup (peterdaugaardrasmussen.com)](https://peterdaugaardrasmussen.com/2022/02/05/how-to-make-integration-tests-in-net-6-without-a-startup-cs-file/)
