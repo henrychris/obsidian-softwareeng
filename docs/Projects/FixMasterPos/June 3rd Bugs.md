@@ -1,0 +1,2 @@
+# Add Repair Products
+When a repair product is added, the id is sent as well. This id differs from `_id` which is created by mongodb. The id refers to a product like an iPhone 16 pro. Currently, the code strips the id away (probably thinking it is the same as _id), which causes checkout to fail.

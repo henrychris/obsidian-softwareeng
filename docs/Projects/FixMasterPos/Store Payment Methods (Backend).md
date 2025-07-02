@@ -78,7 +78,7 @@ Replace the current hardcoded `option: string` field in the Payment model wi
 	- **DONE**
 6. Search across the codebase for 'refund' and update logic if necessary.
 7. Other endpoints/functions to update:
-	1. reports/finance-payment-type - **DONE**
+	1. reports/finance-payment-type - **DONE*feat*
 	2. generate order receipt
 		- there is a `generateReceipt` util which is  a default export. it is called by two endpoints: generateReceipt and send generate receipt - both in the order controller.
 		- need to check how it gets the payment methods
