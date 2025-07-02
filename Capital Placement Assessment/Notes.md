@@ -1,2 +1,0 @@
-- In CosmosDb, you must specify serialization options. So far, I've used `CamelCase`. If you don't the property names you send might not match what Cosmos Db expects, which will cause an error. 
-- 

@@ -1,0 +1,14 @@
+---
+share: "true"
+---
+- Docs For Developers
+- The Art of Unit Testing
+- Designing Data Intensive Applications
+- Learning TypeScript
+- [What Every Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/800-7895/800-7895.pdf)
+- [[Reading/What Every Programmer Should Know About Memory]]
+- DDIA by Martin Kleppman
+- Thinking In Systems
+- [How To Win Friends And Influence People](https://www.amazon.com/How-win-Friends-Influence-People/dp/8189297813)
+- [[Reading/The Software Engineers Guidebook]]
+- [[The Art of Readable Code]]
