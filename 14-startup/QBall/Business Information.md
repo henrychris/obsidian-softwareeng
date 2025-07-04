@@ -1,0 +1,12 @@
+- **Business Name**: QBall Core
+- **Business Description**: We build and maintain booking systems, ticket platforms and venue management software for sport venues. We also build applications for end users to find and access these venues, and manage the pick up games they play while there. 
+- **Contact Email**: contact@qballxi.com
+- **TIN**: 32908265-0001
+- **Business Website**: https://qballxi.com
+- **Address**: 28 Coker Road, Ilupeju
+- **LGA**: Mushin
+- **Nearest Landmark**: Dominos Pizza
+- **Instagram**: qballxi
+- **Corporate Bank Account**
+	- **Bank:** Moniepoint MFB
+	- **Account Number:** 9167711584
