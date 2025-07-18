@@ -1,8 +1,0 @@
-- Venues should be able to create drop-in bookings.
-	- Existing bookings should have type set to `Standard`.
-- Venues should be able to set pricing for drop-in bookings
-	- First, we need to implement the settings tab on the Venue page.
-	- For now, we will add a drop in bookings price to venue settings and use that as the default price when a booking is created.
-	- Venues can change this price on a per-booking basis.
-	- This price should be visible on the public booking page.
-- We should setup auto-refunds if the price is greater or less than the price set for the booking.
