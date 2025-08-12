@@ -47,7 +47,7 @@ function anagrams(s1: string, s2: string) {
 
     for (let i = 0; i < s1.length; i++) {
         if (!(s1[i] in charCount)) {
-	        // if key not in hashMap, set and initialise the key's value
+	        // if key not in hashMap, initialise the key's value
             charCount[s1[i]] = 0;
         }
         if (!(s2[i] in charCount)) {

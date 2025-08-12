@@ -23,3 +23,7 @@
 1. Regarding duplicates, we will run the aggregate query above to find them.
 2. Before running the migration for vendor ids, we can delete the duplicate vendors in a store and leave **one**. As long as they share the same name, they are the *same* item.
 3. The code to migrate vendors is on `chore/migrate-vendors` branch.
+## Migration Notes
+- Revisit vendor named 'Screnn Enterprise RD ' in store 67f66d199d116d210b246f37. The name wasnt trimmed and might be unintentional.
+	- also see 'Screen Enterprise RD' in the same store
+- need to run the migration endpoint. waiting on Alex so i can make a backup.

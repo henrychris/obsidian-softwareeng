@@ -49,7 +49,7 @@ The goal is to:
 ### 4. Ticket Issued
 - After successful payment:
     - Customer is redirected to a **confirmation page**
-    - System generates and displays a **digital ticket**
+    - System generates and send a **digital ticket**
     - Ticket includes: name, time, date, booking ID, and amount
     - Optionally sent via SMS/email
 - Ticket has a **QR code** linking to `/verify/:ticketId`

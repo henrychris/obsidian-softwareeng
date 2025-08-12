@@ -27,4 +27,4 @@ Keeps rows from B, whether or not there are matching values in A.
 ## Full Join
 Rows from both tables are kept, whether they have matching values or not.
 # Continued
-	It is up to the developer to decide how to handle NULL.
+It is up to the developer to decide how to handle NULL values.

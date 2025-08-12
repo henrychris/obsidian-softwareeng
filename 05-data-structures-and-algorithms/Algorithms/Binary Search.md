@@ -1,6 +1,6 @@
 An efficient search algorithm used to find a specific element in a **sorted** array or list. It follows a divide-and-conquer approach, repeatedly dividing the search space in half until the desired element is found or determined to be absent.
 
-```
+```ts
 function bs_list(haystack: number[], needle: number): boolean {
     let lowIndex = 0;
     let highIndex = haystack.length;
@@ -10,18 +10,19 @@ function bs_list(haystack: number[], needle: number): boolean {
         if (haystack[midIndex] === needle) {
             return true;
         }
-        if (haystack[midIndex] > needle) {
-            highIndex = midIndex;
+        
+        if (haystack[midIndex] < needle) {
+            lowIndex = midIndex + 1;
         }
         else {
-            lowIndex = midIndex + 1;
+            highIndex = midIndex;
         }
     } while (lowIndex < highIndex);
     return false;
 }
 ```
 
-1. Set two variables to point to the start of the array, and to the last element in the array: `low` and `high`. 
+1. Set two variables to point to the start index of the array, and to the last element in the array: `low` and `high`. 
 2. Find the mid point in the array.
 3. Compare the value at that mid point to the value being searched for:
 	1. If value = target, return the index.
