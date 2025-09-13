@@ -1,0 +1,5 @@
+- Find a problem
+- Find a customer willing to pay for a solution to that
+- Solve that problem and collect $
+- Let customers inform feature development.
+	- Do not accept feature ideas. Find the core problem by talking and asking questions.

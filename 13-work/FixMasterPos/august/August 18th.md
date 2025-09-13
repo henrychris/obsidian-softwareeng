@@ -1,0 +1,6 @@
+- The order analytics endpoints can be sped up. It currently takes about 10 seconds to get results when filtering for a month. I will try using an aggregation.
+	- i have optimised the order analytics endpoints.
+	- i have fixed the timezone issue alex reported. the frontend wasn't sending start and endDate, and in that scenario we used `new Date()` as fallback. This uses UTC time, not the users' timezone. I now use `parseDateString()`, which is correct.  
+	- the repair analytics optimisation returns 0, 0, 0. i think the aggregation is broken, i need to test it.
+- In order analytics, the 'total orders' section, should exclude cancelled orders.
+	- done
