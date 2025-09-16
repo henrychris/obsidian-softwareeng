@@ -6,14 +6,14 @@ Fabio would use it this way.
  - Create a recurring booking every Thursday between 8-10 pm for Customer X.
 - Create a recurring booking every Sunday between 4-6 pm for Customer X.
 
-of course, existing bookings can also be made recurring. 
+Of course, existing bookings can also be made recurring. 
 ## Implementation
 1. Add a new `RecurringBookings`. Key columns:
 	- Id, VenueId, CustomerId (nullable)
 	- Title, Notes, BookingType
 	- StartTime, EndTime (as TimeOnly to store the time of day)
-	- Frequency (Daily, Weekly, Annually)
-	- DayOfWeek (array, nullable)
+	- Frequency (Daily, Weekly, Monthly, Annually)
+	- DaysOfWeek (array, nullable)
 	- StartDate, EndDate (as DateOnly, with EndDate being mandatory and validated)
 	- LastGeneratedDate (to track the progress of the background job)
 	- IsActive (to easily pause/disable a series)
@@ -24,7 +24,7 @@ of course, existing bookings can also be made recurring.
 	public class RecurrenceInfo
 	{
 	    public required string Frequency { get; set; } // "Weekly", etc.
-	    public List<DayOfWeek>? ByDay { get; set; }
+	    public List<DayOfWeek>? DaysOfWeek { get; set; }
 	    public required DateOnly EndDate { get; set; } // Mandatory
 	}
 	```
@@ -55,15 +55,20 @@ of course, existing bookings can also be made recurring.
 	    3. Use `ITimeZoneService` to convert this local `DateTime` into the correct `StartDateTimeUtc` for that specific date.  This prevents DST shifts from breaking the user's expectation.
 2. Modification of an Entire Series
 	- **The Problem:** Fabio wants to change his recurring Thursday 8-10 PM booking to 7-9 PM, starting next month. This is more complex than just updating a value.
-- **Proposed Solution (Safest Approach):** Treat this as an "end and new" operation.
-    1. The UI would present this as "editing" the series.
-    2. Behind the scenes, the API would take the user's request and:  
-        a. Update the EndDate of the original RecurringBooking template to the last valid date before the change.  
-        b. Create a new RecurringBooking template with the updated details (new time, new StartDate).
-    3. This avoids a messy process of deleting and regenerating bookings, which could fail if individual future instances were already paid for or modified.
+	- **Proposed Solution (Safest Approach):** Treat this as an "end and new" operation.
+	    1. The UI would present this as "editing" the series.
+	    2. Behind the scenes, the API would take the user's request and:  
+	        1. Update the `EndDate` of the original `RecurringBooking` template to the last valid date before the change.  
+	         2. Create a new `RecurringBooking` template with the updated details (new time, new `StartDate`).
+	    3. This avoids a messy process of deleting and regenerating bookings, which could fail if individual future instances were already paid for or modified.
 3. Conflict Resolution Strategy
 	- **The Problem:** The background job tries to create a booking for next Thursday, but Fabio's colleague has already booked that slot for a one-off event. What happens? 
-    - **Solution - Skip and Notify:** The job skips the conflicting slot and creates a notification for the venue manager (email and in-app alert). The notification should be clear: "Could not create recurring booking 'Fabio's Football' on Nov 20, 2025, due to a conflict with booking BK-123XYZ."
+    - **Solution - Skip and Notify:** The job skips the conflicting slot and creates a notification for the venue manager (email and in-app alert). The notification should be clear:
+	    - "We were unable to create some of the bookings for your recurring series '{Series Title}' due to conflicts.
+			- **Nov 20, 2025** conflicted with booking 'Team Away Day'.
+			- **Dec 18, 2025** conflicted with booking 'Christmas Party'.
+		 The other bookings in the series were created successfully."
+		- The code will collect a list of conflicts like, `List<ConflictInfo>`. Where the object holds the date of the failed booking, the conflicting booking id and title. 
 4. Customer/Data Integrity
 	- **The Problem:** Customer X, who has a 6-month recurring booking, is deleted from the system. What happens to the `RecurringBooking` template and all the future generated Booking instances?
 	- **Required Solution:** The "Delete Customer" logic must be updated. When a customer is deleted, the system must also:
@@ -73,7 +78,10 @@ of course, existing bookings can also be made recurring.
 	- **Consideration:** On the calendar, we should display DropIn bookings with a different color  to distinguish them from standard customer-attached bookings.
 6. The "First Booking" Conflict
 	- **The Problem:** When creating a new recurring series, the current Handler logic checks for conflicts for the very first booking instance. But what if the first slot is free, but the second one (next week) is booked?
-	- **Solution:** the Handler (create/update booking) should perform a "dry run" conflict check for at least a few future periods (e.g., the next 4 occurrences or 1 month's worth). If any conflicts are found in this initial check, the entire creation request should be rejected upfront with a clear error message. This provides a much better user experience than creating the series and then having it fail silently in the background a week later.
+	- **Solution:** the Handler (create/update booking) should perform a "dry run" conflict check for the entire 6 month period. 
+		- Before touching the database, create a helper function. This function will take the `RecurrenceInfo` (start date, end date, frequency, days of week) and the venue's timezone. It will generate a list of all potential (`StartDateTimeUtc`, `EndDateTimeUtc`) tuples for the entire 6-month period. This list exists only in your application's memory.
+		- With the list of potential time slots, build one Entity Framework query. The query will find any booking in the database that overlaps with any of the time slots generated in Step 1.
+		- Execute the query. If the query returns any results (i.e., Count > 0), the dry run has failed. Reject the request and return a 409 Conflict error, listing the first few conflicting dates to the user.
 ## Updating Existing Bookings
 A user can do multiple things when updating a booking:
 1. Update the booking as normal. This is what we currently support
@@ -154,7 +162,8 @@ private async Task<Result<BookingResponse>> MakeBookingRecurringAsync(Booking bo
             // ... copy all relevant properties
             StartDate = DateOnly.FromDateTime(request.StartDateTime),
             EndDate = request.Recurrence!.EndDate,
-            RecurrenceRule = ConvertToRRule(request.Recurrence),
+            Frequency = request.Recurrence!.Frequency, 
+            DaysOfWeek = request.Recurrence!.DaysOfWeek, // Using the suggested rename
         };
         context.RecurringBookings.Add(recurringBooking);
         await context.SaveChangesAsync(ct); // Save to get the new ID
