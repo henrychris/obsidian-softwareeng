@@ -8,11 +8,10 @@ Fabio would use it this way.
 
 Of course, existing bookings can also be made recurring. 
 ## Implementation
-1. Add a new `RecurringBookings`. Key columns:
+1. Add a new `RecurringBooking` table. Key columns:
 	- Id, VenueId, CustomerId (nullable)
-	- Title, Notes, BookingType
 	- StartTime, EndTime (as TimeOnly to store the time of day)
-	- Frequency (Daily, Weekly, Monthly, Annually)
+	- Frequency (Daily, Weekly, Monthly)
 	- DaysOfWeek (array, nullable)
 	- StartDate, EndDate (as DateOnly, with EndDate being mandatory and validated)
 	- LastGeneratedDate (to track the progress of the background job)
@@ -74,6 +73,7 @@ Of course, existing bookings can also be made recurring.
 	- **Required Solution:** The "Delete Customer" logic must be updated. When a customer is deleted, the system must also:
 	    1. Find and delete any `RecurringBooking` templates linked to that `CustomerId`.
 	    2. Find and delete all future, non-completed `Booking` instances linked to that `CustomerId`. This prevents orphaned bookings and templates in the system. We must warn users about what data is being deleted when they do this.
+		    1. But, bookings **can** be orphaned. SO why not just unlink the customer?
 5. Drop-In Recurring Bookings
 	- **Consideration:** On the calendar, we should display DropIn bookings with a different color  to distinguish them from standard customer-attached bookings.
 6. The "First Booking" Conflict
@@ -284,3 +284,46 @@ private async Task<Result<BookingResponse>> UpdateThisAndFutureBookingsAsync(Boo
 	- `UpdateScope`: ThisAndFutureEvents
 	- `Recurrence`: {...new rules...}
 	- `Calls`: UpdateThisAndFutureBookingsAsync (ends old series, starts a new one)
+
+# UI
+Here is how the two layers should work together:
+
+**The API's Strict and Clear Contract (Your Current Design):**
+*   `Frequency: "Daily"`: Repeats every day. **MUST NOT** have a `DaysOfWeek` property.
+*   `Frequency: "Weekly"`: Repeats on specific days. **MUST** have a `DaysOfWeek` property.
+*   `Frequency: "Monthly"`: Repeats on a specific day of the month. **MUST NOT** have a `DaysOfWeek` property.
+
+**The Smart UI's Logic:**
+1.  The user interacts with a "Repeat" dropdown.
+2.  **If they select "Daily":**
+    *   The UI can show 7 checked *and disabled* day-of-the-week toggles. This visually confirms to the user that it's every day.
+    *   The frontend's internal state for the API call is `{ frequency: "Daily", daysOfWeek: null }`.
+3.  **If they select "Weekly":**
+    *   The UI now *enables* the 7 day-of-the-week toggles.
+    *   By default, you can have all 7 checked.
+    *   The user can now uncheck days. Let's say they uncheck Saturday and Sunday.
+    *   The frontend's internal state for the API call is now `{ frequency: "Weekly", daysOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] }`.
+4.  **If they select "Monthly":**
+    *   The UI hides the day-of-the-week toggles completely.
+    *   The frontend's internal state for the API call is `{ frequency: "Monthly", daysOfWeek: null }`.
+
+This approach gives you the best of both worlds:
+*   A user-friendly, intuitive interface.
+*   A robust, explicit, and unambiguous backend API that is easy to understand, validate, and maintain.
+
+# Final Todo
+- card style for forms can come in future. summary form to bookings too. see v0 for what i mean and take a screenshot for reference: https://v0.app/chat/recurring-booking-ui-dLkgleFA06s
+- Add retry  to Monnify Refit API
+
+- Rework  Auth on FE to use SvelteKit's fetch & cookie forwarding. Backend will need to be updated to support cookie auth, getting the jwt from the cookie.
+
+- Update public venue page to use venue photos & gallery form
+- Users should be able to assign customers to existing bookings - and remove customers too.
+- check the upload image form on the gallery feature. nothing happens when an image is uploaded.
+- remove `date-fns` library in favour of date util. store venue details in context so we can access the timezone at any point in the application, instead of prop-drilling.
+## QSet
+- Testing - https://aistudio.google.com/prompts/1H8iKNPauayQghFHJCqNlsjEavWy_qisa
+- Performance - https://aistudio.google.com/prompts/1j77V-7H8iRQ71-V83QlsxjfJqfso9Omh
+## Qball Backend
+- Testing Monnify Provider and Webhook Controller - https://aistudio.google.com/prompts/1Dje5Y_sojyx-fkOV_OHgfkIX6_TIXZbm
+- Requerying Transactions - https://aistudio.google.com/prompts/1v_yYYHXHqYVTXzZTP7iuG7hITqryqvKR

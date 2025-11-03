@@ -25,8 +25,8 @@ Main goal is to find out what it takes to go from the level I am at to the next.
 - Send an email, twitter DM or book a meeting whenever
 # To-Do
 - Make a sheet of goals I wish to achieve in 3m, 6m, 1year
-- Move my blog from Medium to GitHub Pages.
-	- Use Jekyll, Astro or Ghost. I like Astro though.
+- ~~Move my blog from Medium to GitHub Pages.~~
+	- ~~Use Jekyll, Astro or Ghost. I like Astro though.~~
 - Read Computer Science Distilled
 - Go through the introduction to Python
 - Watch Indian guy video from Open Letter
@@ -49,4 +49,3 @@ Main goal is to find out what it takes to go from the level I am at to the next.
 
 # Month #4 and Beyond
 - Operating Systems
-- 
