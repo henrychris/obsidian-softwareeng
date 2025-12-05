@@ -183,40 +183,12 @@ The RNC is the company’s identifier.
 
 this way we avoid all the proration issues with stripe treating changes as replacements, and users have a clear way to top up when needed
 
----
-
-Tomorrow
-
-Switch `POST /fiscals/subscription` endpoint to use Checkout Session. Include plan Id & userId in metadata. Calculate the proration using the user's billing period and create the checkout session. When user completes payment, add the subscription item to their existing subscription. Stripe would not create an invoice, so we won't have to do all that invoice management nonsense.
-
-We can specify a price by adding a `line item`.
-
-Similarly, we can use checkout sessions for `POST /fiscals/topup`. Add `is_topup` to metadata.
-
-Listen for `customer.subscription.deleted` to know when the user's subscription ends. If it ends, then remove the fiscal receipts. Use a cron job to renew the allowance every month.
-
-```ts
-const hasActiveFiscalSubscription =
-    user.fiscalSubscription &&
-    user.fiscalSubscription.status === FiscalSubscriptionStatus.ACTIVE &&
-    (!user.fiscalSubscription.expiresAt || user.fiscalSubscription.expiresAt > new Date());
-  if (!hasActiveFiscalSubscription) {
-    return reply
-      .status(403)
-      .send(ApiResponse.error(FiscalResponses.FISCAL_SUBSCRIPTION_REQUIRED));
-  }
-```
-
+## Sequence Numbers
 [ENCF Format](https://docnova.ai/electronic-fiscal-receipt-ecf/)
 
-The eNCF (Electronic Tax Receipt Number) structure: Format: E31XXXXXXXXXX (13 characters total) E = Electronic series indicator 31 = Fiscal credit invoice type Next 10 digits = Sequential number (e.g., 0009474001)
+The eNCF (Electronic Tax Receipt Number) structure: Format: E31XXXXXXXXXX (13 characters total) E = Electronic series indicator 31 = Fiscal credit invoice type Next 10 digits = Sequential number (e.g., 0009474001). We have to generate a sequence number within the range 9474001-9475000.
 
-## Sequence Numbers
-we have to generate a sequence number within the range 9474001-9475000.
-
-using that range, we generate an encf by adding the prefix E31, and pad left the number to 10 digits.
-
-The current range allows us to issue 999 receipts. When we use up that allowance, we will be issue a new range of sequence numbers.
+Using that range, we generate an encf by adding the prefix E31, and pad left the number to 10 digits. The current range allows us to issue 999 receipts. When we use up that allowance, we will be issue a new range of sequence numbers.
 
 It's possible that this range does not immediately follow the last sequence we were issued. That is, after we use 9475000, it is not certain that the next range we are issued starts from **9475001**. We can't simply increment our last sequence number, because these sequences are issued by the government, and might have been issued to a different company - not us.
 
@@ -240,6 +212,13 @@ When we are issued a new sequence range, we can create a new `EncfSequence` reco
 When creating a new `EncfSequence`, we should validate that the new range does not overlap with any existing ranges in the database.
 When generating the `encf`, we will pad the `current_sequence` to 10 digits and add the prefix `E31`.
 This way, the system can seamlessly transition to new sequence ranges without any manual intervention in the receipt generation process.
-### Concerns
--   Are we overcompensating for one provider?
+## Go Live
+- Create Fiscal Receipt Plans on Stripe & save to database
+- Add Encf Sequence to database
+	- how would this work for beta, since it uses the same environment as dev?
 
+### Dec 02
+- Yet to Fiscal receipt plans on Stripe
+- Yet to Fiscal receipt plans in DB
+- Yet to add live keys for Alanube
+- Yet to add encf sequence for live environment

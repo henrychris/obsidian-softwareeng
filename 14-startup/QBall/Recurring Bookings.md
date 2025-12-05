@@ -315,8 +315,6 @@ This approach gives you the best of both worlds:
 - card style for forms can come in future. summary form to bookings too. see v0 for what i mean and take a screenshot for reference: https://v0.app/chat/recurring-booking-ui-dLkgleFA06s
 - Add retry  to Monnify Refit API
 
-- Rework  Auth on FE to use SvelteKit's fetch & cookie forwarding. Backend will need to be updated to support cookie auth, getting the jwt from the cookie.
-
 - Update public venue page to use venue photos & gallery form
 - Users should be able to assign customers to existing bookings - and remove customers too.
 - check the upload image form on the gallery feature. nothing happens when an image is uploaded.
