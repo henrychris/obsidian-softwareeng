@@ -1,5 +1,5 @@
 After providing order details, users hit the 'checkout' button. This pulls up the the select payment modal.
-!!![[../../assets/store-payment-methods-old-1.png]]
+!!![[store-payment-methods-old-1.png]]
 After selecting an option, this body is sent to the backend:
 - Cash Payment
 ```json
@@ -53,14 +53,14 @@ After selecting an option, this body is sent to the backend:
 }
 ```
 Now, we wish to replace these with store defined Payment Methods.
-!!![[../../assets/store-payment-methods-old-2.png]]
+!!![[store-payment-methods-old-2.png]]
 
 The default payment methods must be created for all stores & are enabled by default.
 Users can add custom payment methods:
-!!![[../../assets/store-payment-methods-old-3.png]]
+!!![[store-payment-methods-old-3.png]]
 The radio button determines what payment status should be applied to the order when the payment method is selected. However, I think this can lead to bugs and the payment status should instead be derived based on how much is received vs how much is expected
 
-!!![[../../assets/store-payment-methods-old-4.png]]
+!!![[store-payment-methods-old-4.png]]
 Custom payment methods can be enabled and disabled. They can also be edited to change the name and status modifier.
 ## Endpoints
 

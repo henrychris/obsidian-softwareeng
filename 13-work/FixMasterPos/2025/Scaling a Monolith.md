@@ -31,7 +31,7 @@
 # Day By Day
 ## Day 1 - June 5th
 ### Get All Customers
-!!![[../../assets/scaling-a-monolith-1.png]]
+!!![[scaling-a-monolith-1.png]]
 The existing code had a classic N+1 query:
 1. Fetch all customers with filters (1 query)
 2. For each customer, make 2 additional queries:

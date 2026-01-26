@@ -5,7 +5,7 @@
 I want to borrow from Shopify's implementation. On Shopify, when there are < 50 products being imported, a progress modal is shown. Users can watch the import process in real-time, and they will see a summary when it completes.
 
 When they import > 50 products, the job is queued and the user will _not_ be able to watch the progress in real time. This is to save resources, as the import will take much longer to complete. When the import process is complete, users receive an email summarising the procedure.
-!!![[../../assets/optimising-import-products-1.png]]
+!!![[optimising-import-products-1.png]]
 
 # Plan
 ### For < 50 products (live processing with progress)

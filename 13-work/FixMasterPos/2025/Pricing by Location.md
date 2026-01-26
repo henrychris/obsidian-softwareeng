@@ -14,8 +14,8 @@ There are three types of products: simple, serialised and variable.
 - They can set quantity, price, cost, margin and sku at multiple locations (if using location-based pricing)
 - If using generic pricing, they can set the quantity at different locations, but not different price schemes.
 - On the frontend, they can disable a variable product at a location, which means users can not set a price, quantity and inventory at the location.
-!!![[../../assets/pricing-by-location-1.png]]
-!!![[../../assets/pricing-by-location-2.png]]
+!!![[pricing-by-location-1.png]]
+!!![[pricing-by-location-2.png]]
 ### Simple and Serialized
 - Products can be disabled at a location, which means users can not set a price, quantity and inventory at the location.
 ## Plan v1
