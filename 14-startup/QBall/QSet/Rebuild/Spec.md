@@ -37,7 +37,7 @@ The current app is a fully client-side SvelteKit PWA with no backend. All state 
 
 | Concern         | Choice                                     | Notes                                    |
 | --------------- | ------------------------------------------ | ---------------------------------------- |
-| Framework       | SvelteKit 2 + Svelte 5 (runes)             | Existing — keep                          |
+| Framework       | SvelteKit & Svelte 5 (runes)               | Existing — keep                          |
 | Language        | TypeScript                                 | Existing — keep                          |
 | Styling         | Tailwind CSS v4                            | Existing — keep                          |
 | UI primitives   | bits-ui, shared component library          | Existing — keep                          |

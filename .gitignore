@@ -3,3 +3,4 @@ desktop.ini
 Pipfile
 Pipfile.lock
 /.obsidian
+.DS_Store
